@@ -187,8 +187,8 @@ var currentData = {}; // Stores current stage data
 var display = ""; // HTML DOM elements to be displayed
 var status = 0; // Tracks if button is displayed or not
 var fullscreen = 0; // Tracks if the view is fullscreen or not
-var base64loaded = "not yet"; // Checks if base64 value of video is loaded
-var videoData = {}; // Stores the base64 data of video
+// var base64loaded = "not yet"; // Checks if base64 value of video is loaded
+// var videoData = {}; // Stores the base64 data of video
 
 //======================================================================================
 
@@ -196,20 +196,20 @@ $(document).ready(() => {
   document.getElementById("stylesheet").href = theme[flow.theme];
   console.log("document.ready...");
 
-  $.ajax({
-    url: "https://pixie.jubi.ai/videoParramato/base64",
-    type: "get",
-    dataType: "json",
-    contentType: "application/json",
-    success: resp => {
-      console.log("Ajax Success !!");
-      base64loaded = resp.status;
-      videoData = videoData;
-    },
-    error: err => {
-      console.log("Error");
-    }
-  });
+  // $.ajax({
+  //   url: "https://pixie.jubi.ai/videoParramato/base64",
+  //   type: "get",
+  //   dataType: "json",
+  //   contentType: "application/json",
+  //   success: resp => {
+  //     console.log("Ajax Success !!");
+  //     base64loaded = resp.status;
+  //     videoData = videoData;
+  //   },
+  //   error: err => {
+  //     console.log("Error");
+  //   }
+  // });
 
   document.addEventListener("fullscreenchange", exitHandler);
   document.addEventListener("webkitfullscreenchange", exitHandler);
@@ -334,26 +334,26 @@ function getNextStageData(nextStage) {
     console.log("currentStageNum : ", currentStageNum);
     currentData = flow.stages[currentStageNum];
     // console.log(JSON.stringify(currentData, 0, 3));
-    if (base64loaded == "not yet") {
-      console.log("Video Data from URL...");
-      videoDisplay(currentData.video);
-    } else {
-      console.log("Video Data from base64...");
-      videoDisplay("data:video/mp4;base64," + videoData[currentData.stage]);
-    }
+    // if (base64loaded == "not yet") {
+    console.log("Video Data from URL...");
+    videoDisplay(currentData.video);
+    // } else {
+    //   console.log("Video Data from base64...");
+    //   videoDisplay("data:video/mp4;base64," + videoData[currentData.stage]);
+    // }
     // createUI(currentData);
   } else {
     currentStageNum = Object.keys(flowJSON).indexOf(nextStage);
     console.log("currentStageNum : ", currentStageNum);
     currentData = flowJSON[nextStage];
     // console.log(JSON.stringify(currentData, 0, 3));
-    if (base64loaded == "not yet") {
-      console.log("Video Data from URL...");
-      videoDisplay(currentData.video);
-    } else {
-      console.log("Video Data from base64...");
-      videoDisplay("data:video/mp4;base64," + videoData[currentData.stage]);
-    }
+    // if (base64loaded == "not yet") {
+    console.log("Video Data from URL...");
+    videoDisplay(currentData.video);
+    // } else {
+    //   console.log("Video Data from base64...");
+    //   videoDisplay("data:video/mp4;base64," + videoData[currentData.stage]);
+    // }
     // createUI(currentData);
   }
 }
