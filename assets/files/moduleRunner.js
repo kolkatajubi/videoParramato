@@ -3,7 +3,7 @@ var flow = {
   flowId: "insurance",
   projectId: "finservVoiceUat_111217597624559107965",
   id: "finservVoiceUat_111217597624559107965-insurance",
-  theme: "default",
+  theme: "light",
   stages: [
     {
       text: [
