@@ -376,7 +376,7 @@ function videoDisplay(videoData) {
     // </video>`
   );
   console.log("<source id='start' type='video/mp4' src='" + videoData + "' />");
-  $("#myVideo").attr("poster", "");
+  // $("#myVideo").attr("poster", "");
   var video = document.getElementById("myVideo");
   console.log(video);
   video.load();
