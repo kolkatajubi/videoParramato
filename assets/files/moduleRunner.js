@@ -380,7 +380,8 @@ function videoDisplay(videoData) {
   var video = document.getElementById("myVideo");
   console.log(video);
   video.load();
-  if (currentStageNum != 0) video.play();
+  video.play();
+  if (currentStageNum == 0) video.playPause();
 }
 
 function createUI(currentData) {
