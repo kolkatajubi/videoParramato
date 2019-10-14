@@ -339,7 +339,7 @@ function getNextStageData(nextStage) {
       videoDisplay(currentData.video);
     } else {
       console.log("Video Data from base64...");
-      videoDisplay(videoData[currentData.stage]);
+      videoDisplay("data:video/mp4;base64," + videoData[currentData.stage]);
     }
     // createUI(currentData);
   } else {
@@ -352,7 +352,7 @@ function getNextStageData(nextStage) {
       videoDisplay(currentData.video);
     } else {
       console.log("Video Data from base64...");
-      videoDisplay(videoData[currentData.stage]);
+      videoDisplay("data:video/mp4;base64," + videoData[currentData.stage]);
     }
     // createUI(currentData);
   }
