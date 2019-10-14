@@ -180,7 +180,11 @@ var flow = {
   folder: "personalLoanLending"
 };
 
-var theme = { default: "", dark: "styledark.css", light: "stylexls.css" };
+var theme = {
+  default: "",
+  dark: "https://pixie.jubi.ai/videoParramato/static/css/styledark.css",
+  light: "https://pixie.jubi.ai/videoParramato/static/css/stylexls.css"
+};
 var currentStageNum = -1; // Stores current stage number
 var flowJSON = {}; // Stores flow key(stage name) - value(stage data) pair
 var currentData = {}; // Stores current stage data
