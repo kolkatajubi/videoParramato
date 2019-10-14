@@ -330,6 +330,7 @@ for (i = 0; i < flow.stages.length; i++) {
 function getNextStageData(nextStage) {
   console.log("getNextStageData...");
   clearChat();
+  $("#playImg").hide();
   status = 0;
   currentData = {}; // Stores current stage data
   display = ""; // HTML DOM elements to be displayed
