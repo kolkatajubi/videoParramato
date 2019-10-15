@@ -540,6 +540,7 @@ $(".response-text").focusout(function() {
 });
 
 function disableTextButton() {
+  console.log("disable Button called");
   $(".response-text").focusout(function() {
     validate_name();
   });
@@ -547,9 +548,10 @@ function disableTextButton() {
   function validate_name() {
     var pattern = /^[a-zA-Z ]*$/;
     var name = $(".response-text").val();
+    console.log("resp text. val () = ", name);
     if (name == "") {
       $(".send").attr("disabled", true);
-    } else if (pattern.test(name) && name !== "") {
+    } else if (pattern.test(name) && name != "") {
       $(".send").attr("disabled", false);
     } else {
       $(".send").attr("disabled", true);
