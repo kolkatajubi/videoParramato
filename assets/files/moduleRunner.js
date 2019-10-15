@@ -9,9 +9,9 @@ var flow = {
       text: [
         "Choosing to insure is a great step indeed.😊 What can I assist you with specifically? "
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/age.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/start.mp4",
       type: "button",
-      stage: "age",
+      stage: "start",
       next: {
         data: [
           {
@@ -65,17 +65,17 @@ var flow = {
       text: [
         "Oh even I am happy to see you happy and will do my best to make you even more happy by solving your queries"
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/salary.mp4",
-      stage: "st_salary",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/gender.mp4",
+      stage: "gender",
       type: "text"
     },
     {
       text: [
         "Insurance is a contract, represented by a policy, in which an individual or entity receives financial protection or reimbursement against losses from an insurance company."
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/dependent.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/age.mp4",
       type: "quickReply",
-      stage: "dependent",
+      stage: "age",
       next: {
         data: [
           {
@@ -89,9 +89,9 @@ var flow = {
       text: [
         "Apart from the amount that you decide to invest, there are minimum charges to be paid when opening an account under National Pension Scheme. These include transaction charges, advisory charges and applicable GST. Do keep in mind that these charges are calculated basis the amount you invest. "
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/pooh.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/dependent.mp4",
       type: "button",
-      stage: "stageURL",
+      stage: "dependent",
       next: {
         data: [
           {
@@ -110,9 +110,9 @@ var flow = {
       text: [
         "Apart from the amount that you decide to invest, there are minimum charges to be paid when opening an account under National Pension Scheme. These include transaction charges, advisory charges and applicable GST. Do keep in mind that these charges are calculated basis the amount you invest. "
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/name.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/salary.mp4",
       type: "button",
-      stage: "stageWV",
+      stage: "salary",
       next: {
         data: [
           {
@@ -129,9 +129,9 @@ var flow = {
     },
     {
       text: [" What is the name of your Firm?(Eg: ABC Associates)"],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/end.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/expenses.mp4",
       type: "text",
-      stage: "offName",
+      stage: "expenses",
       next: {
         expectation: {
           invalidMessage: "",
@@ -142,9 +142,9 @@ var flow = {
     },
     {
       text: [" What is the name of your Firm?(Eg: ABC Associates)"],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/job.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/end.mp4",
       type: "generic",
-      stage: "offNameGeneric",
+      stage: "end",
       next: {
         data: [
           {
