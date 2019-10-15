@@ -491,7 +491,7 @@ function createButtonWebView(data, text) {
 
 function createText() {
   console.log("Create Text Input");
-  return `<input class='response-text' type='text' placeholder='enter here ...' /> <button class='send' onclick='getNextStageData();'>Send</button>`;
+  return `<input class='response-text' type='text' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`;
 }
 
 function createGeneric(data) {
