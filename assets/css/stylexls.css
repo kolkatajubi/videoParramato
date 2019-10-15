@@ -1,4 +1,4 @@
-body {
+/* body {
   background: black;
 }
 
@@ -28,7 +28,6 @@ body {
 
 #playImg {
   position: absolute;
-  /* height: 32%; */
   width: 18%;
   z-index: 1;
   top: 50%;
@@ -79,7 +78,7 @@ input {
   margin: 5px 15px;
   padding: 8px 47px;
   border-radius: 10px;
-}
+} */
 
 /* 
 video::-webkit-media-controls-play-button {
@@ -101,3 +100,100 @@ video::-webkit-media-controls-timeline {
 
 video::-webkit-media-controls-current-time-display {
 } */
+.generic,
+.generic-button {
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* float: left; */
+  /* width: 100%; */
+  width: 530px;
+  height: 250px;
+  left: 130px;
+}
+
+/*.mainPage .demo {
+  color: #808080;
+  position: absolute;
+  font-style: normal;
+  font-weight: 400;
+  font-family: sans-serif;
+  top: 30px;
+  left: 250px;
+}*/
+
+.generic,
+.generic-button .slideshow {
+  /* position: absolute; */
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.generic,
+.generic-button .slidewrapper {
+  position: absolute;
+  animation-name: slide;
+  animation-duration: 10s;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+.generic .genericText,
+img {
+  position: absolute;
+  text-align: center;
+}
+
+/*.box2 {
+  left: 280px;
+}
+
+.box3 {
+  left: 550px;
+}
+
+.box4 {
+  left: 820px;
+}
+
+.item {
+  position: absolute;
+}
+
+.item .free,
+.easy,
+.fast {
+  position: absolute;
+  top: 40px;
+  left: 100px;
+}
+
+.upgradable {
+  position: absolute;
+  top: 40px;
+  left: 75px;
+}*/
+
+@keyframes slide {
+  20% {
+    margin-left: 0px;
+  }
+  30% {
+    margin-left: -728px;
+  }
+  50% {
+    margin-left: -728px;
+  }
+  /* 60% {
+    margin-left: -1456px;
+  }
+  70% {
+    margin-left: -1456px;
+  }
+  80% {
+    margin-left: -2184px;
+  }
+  90% {
+    margin-left: -2184px;
+  } */
+}

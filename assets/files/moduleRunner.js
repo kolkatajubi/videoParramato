@@ -463,7 +463,18 @@ function createButton(data, text) {
     `</button>`
   );
 }
-
+function createCarouselButton(data, text) {
+  console.log("Create Button");
+  // console.log("data", data);
+  // console.log("text", text);
+  return (
+    `<button class ='generic-button' value='` +
+    data +
+    `' onclick='' >` +
+    text +
+    `</button>`
+  );
+}
 function createButtonURL(data, text) {
   console.log("Create Button URL");
   // console.log("data", data);
@@ -522,7 +533,7 @@ function carouselButtons(buttons) {
   for (i in buttons) {
     // console.log("Carousel -> Next -> Data[] -> Buttons[]" + i);
     genericButtons =
-      genericButtons + createButton(buttons[i].data, buttons[i].text);
+      genericButtons + createCarouselButton(buttons[i].data, buttons[i].text);
   }
   return genericButtons;
 }
