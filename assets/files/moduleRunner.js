@@ -65,22 +65,26 @@ var flow = {
       text: [
         "Oh even I am happy to see you happy and will do my best to make you even more happy by solving your queries"
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/gender.mp4",
-      stage: "gender",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/age.mp4",
+      stage: "age",
       type: "text"
     },
     {
       text: [
         "Insurance is a contract, represented by a policy, in which an individual or entity receives financial protection or reimbursement against losses from an insurance company."
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/age.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/gender.mp4",
       type: "quickReply",
-      stage: "age",
+      stage: "gender",
       next: {
         data: [
           {
-            data: "Get Insurance",
-            text: "Get Insurance"
+            data: "MALE",
+            text: "MALE"
+          },
+          {
+            data: "FEMALE",
+            text: "FEMALE"
           }
         ]
       }
