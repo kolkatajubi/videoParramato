@@ -107,8 +107,6 @@ video::-webkit-media-controls-current-time-display {
   padding-right: 10px;
   /* float: left; */
   /* width: 100%; */
-  width: 530px;
-  height: 250px;
   left: 130px;
 }
 
