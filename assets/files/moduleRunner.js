@@ -65,8 +65,8 @@ var flow = {
       text: [
         "Oh even I am happy to see you happy and will do my best to make you even more happy by solving your queries"
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/age.mp4",
-      stage: "age",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/name.mp4",
+      stage: "name",
       type: "text"
     },
     {
@@ -396,6 +396,7 @@ function createUI(currentData) {
     case "text":
       console.log("text");
       display = display + createText();
+      disableTextButton();
       break;
     case "button":
     case "quickReply":
@@ -532,4 +533,26 @@ function replayFlow() {
   display =
     display +
     `<button class ='response-button' value='replay' onclick='getNextStageData();'>Replay</button>`;
+}
+
+$(".response-text").focusout(function() {
+  validate_name();
+});
+
+function disableTextButton() {
+  $(".response-text").focusout(function() {
+    validate_name();
+  });
+
+  function validate_name() {
+    var pattern = /^[a-zA-Z ]*$/;
+    var name = $(".response-text").val();
+    if (name == "") {
+      $(".send").attr("disabled", true);
+    } else if (pattern.test(name) && name !== "") {
+      $(".send").attr("disabled", false);
+    } else {
+      $(".send").attr("disabled", true);
+    }
+  }
 }
