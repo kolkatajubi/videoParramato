@@ -129,9 +129,9 @@ var flow = {
     },
     {
       text: [" What is the name of your Firm?(Eg: ABC Associates)"],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/expenses.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/expense.mp4",
       type: "text",
-      stage: "expenses",
+      stage: "expense",
       next: {
         expectation: {
           invalidMessage: "",
