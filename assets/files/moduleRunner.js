@@ -542,6 +542,7 @@ $(".response-text").focusout(function() {
 function disableTextButton() {
   console.log("disable Button called");
   $(".response-text").focusout(function() {
+    console.log("validate name called ");
     validate_name();
   });
 
