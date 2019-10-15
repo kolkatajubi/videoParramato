@@ -396,7 +396,7 @@ function createUI(currentData) {
     case "text":
       console.log("text");
       display = display + createText();
-      disableTextButton();
+      validateButton();
       break;
     case "button":
     case "quickReply":
@@ -492,7 +492,7 @@ function createButtonWebView(data, text) {
 
 function createText() {
   console.log("Create Text Input");
-  return `<input class='response-text' type='text' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`;
+  return `<input id='name' class='response-text' type='text' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`;
 }
 
 function createGeneric(data) {
@@ -539,16 +539,16 @@ $(".response-text").focusout(function() {
   validate_name();
 });
 
-function disableTextButton() {
+function validateButton() {
   console.log("disable Button called");
-  $(".response-text").focusout(function() {
+  $("#name").focusout(function() {
     console.log("validate name called ");
     validate_name();
   });
 
   function validate_name() {
     var pattern = /^[a-zA-Z ]*$/;
-    var name = $(".response-text").val();
+    var name = $("#name").val();
     console.log("resp text. val () = ", name);
     if (name == "") {
       $(".send").attr("disabled", true);
