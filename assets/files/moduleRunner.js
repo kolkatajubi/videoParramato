@@ -492,7 +492,7 @@ function createButtonWebView(data, text) {
 
 function createText() {
   console.log("Create Text Input");
-  return `<input id='name' class='response-text' type='text' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`;
+  return `<input id='name' class='response-text' type='text' placeholder='enter here ...' /> <button class='send' onclick='getNextStageData();'>Send</button>`;
 }
 
 function createGeneric(data) {
@@ -535,27 +535,23 @@ function replayFlow() {
     `<button class ='response-button' value='replay' onclick='getNextStageData();'>Replay</button>`;
 }
 
-$(".response-text").focusout(function() {
-  validate_name();
-});
-
 function validateButton() {
   console.log("disable Button called");
-  $("#name").focusout(function() {
+  $(".response-text").focusout(function() {
     console.log("validate name called ");
     validate_name();
   });
+}
 
-  function validate_name() {
-    var pattern = /^[a-zA-Z ]*$/;
-    var name = $("#name").val();
-    console.log("resp text. val () = ", name);
-    if (name == "") {
-      $(".send").attr("disabled", true);
-    } else if (pattern.test(name) && name != "") {
-      $(".send").attr("disabled", false);
-    } else {
-      $(".send").attr("disabled", true);
-    }
+function validate_name() {
+  var pattern = /^[a-zA-Z ]*$/;
+  var name = $(".response-text").val();
+  console.log("resp text. val () = ", name);
+  if (name == "") {
+    $(".send").attr("disabled", true);
+  } else if (pattern.test(name) && name != "") {
+    $(".send").attr("disabled", false);
+  } else {
+    $(".send").attr("disabled", true);
   }
 }
