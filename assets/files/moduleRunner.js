@@ -556,7 +556,7 @@ function validate(tag) {
   // console.log("validate name called ");
   if (tag.getAttribute("id") == "name") {
     console.log("name validation...");
-    validate_name("/^[a-zA-Z]+$/");
+    validate_input("/^[a-zA-Z]+$/");
   }
   if (tag.getAttribute("id") == "number") {
     console.log("number validation...");
