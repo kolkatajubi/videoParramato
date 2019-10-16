@@ -140,7 +140,7 @@ var flow = {
         expectation: {
           invalidMessage: "",
           type: "regex",
-          val: "/\\d+/"
+          val: /\\d+/
         }
       }
     },
@@ -555,6 +555,7 @@ function replayFlow() {
 
 function validate(pattern) {
   //var pattern = /^[a-zA-Z ]+$/;
+  console.log(pattern);
   var input = $(".response-text").val();
   console.log("response-text.val() = ", input);
   if (input == "") {
