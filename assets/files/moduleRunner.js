@@ -202,7 +202,7 @@ var fullscreen = 0; // Tracks if the view is fullscreen or not
 
 $(document).ready(() => {
   document.getElementById("stylesheet").href = theme[flow.theme];
-  console.log("document.ready...");
+  // console.log("document.ready...");
 
   // $.ajax({
   //   url: "https://pixie.jubi.ai/videoParramato/base64",
@@ -251,7 +251,7 @@ $(document).ready(() => {
     getNextStageData();
 
     setInterval(() => {
-      console.log("setInterval...");
+      // console.log("setInterval...");
       var videoDuration = document
         .getElementById("myVideo")
         .duration.toFixed(2);
@@ -269,7 +269,7 @@ $(document).ready(() => {
 
 function playPause() {
   FS();
-  console.log("play called fullscreen...");
+  // console.log("play called fullscreen...");
   if (myVideo.paused) {
     $("#playImg").hide();
     myVideo.play();
@@ -282,7 +282,7 @@ function playPause() {
 }
 
 function FS() {
-  console.log("fullscreen called...", fullscreen);
+  // console.log("fullscreen called...", fullscreen);
   if (fullscreen == 0) {
     if (document.body.requestFullscreen) document.body.requestFullscreen();
     else if (document.body.mozRequestFullScreen)
@@ -300,7 +300,7 @@ function FS() {
 }
 
 function exitFS() {
-  console.log("exit fullscreen called...", fullscreen);
+  // console.log("exit fullscreen called...", fullscreen);
   if (fullscreen == 1) {
     if (document.exitFullscreen) document.exitFullscreen();
     else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
@@ -315,7 +315,7 @@ function exitFS() {
 }
 
 function toggleFS() {
-  console.log("toggle fullscreen called...", fullscreen);
+  // console.log("toggle fullscreen called...", fullscreen);
   if (fullscreen == 0) FS();
   else exitFS();
 }
@@ -338,7 +338,7 @@ for (i = 0; i < flow.stages.length; i++) {
 
 // getNextStageData will return the next stage data and display video
 function getNextStageData(nextStage) {
-  console.log("getNextStageData...");
+  // console.log("getNextStageData...");
   clearChat();
   $("#playImg").hide();
   status = 0;
@@ -359,11 +359,11 @@ function getNextStageData(nextStage) {
     // createUI(currentData);
   } else {
     currentStageNum = Object.keys(flowJSON).indexOf(nextStage);
-    console.log("currentStageNum : ", currentStageNum);
+    // console.log("currentStageNum : ", currentStageNum);
     currentData = flowJSON[nextStage];
     // console.log(JSON.stringify(currentData, 0, 3));
     // if (base64loaded == "not yet") {
-    console.log("Video Data from URL...");
+    // console.log("Video Data from URL...");
     videoDisplay(currentData.video);
     // } else {
     //   console.log("Video Data from base64...");
@@ -374,33 +374,27 @@ function getNextStageData(nextStage) {
 }
 
 function videoDisplay(videoData) {
-  console.log("videoDisplay...");
-  console.log(videoData);
-  // if ($("#myVideo"))
+  // console.log("videoDisplay...");
+  // console.log(videoData);
   $("#myVideo").empty();
   $("#myVideo").append(
-    //   `<video
-    //   id="myVideo"
-    //   onclick="playPause();"
-    // >
     "<source id='start' type='video/mp4' src='" + videoData + "' />"
-    // </video>`
   );
-  console.log("<source id='start' type='video/mp4' src='" + videoData + "' />");
+  // console.log("<source id='start' type='video/mp4' src='" + videoData + "' />");
   // $("#myVideo").attr("poster", "");
   var video = document.getElementById("myVideo");
-  console.log(video);
+  // console.log(video);
   video.load();
   if (currentStageNum == 0) $("#playImg").show();
   else video.play();
 }
 
 function createUI(currentData) {
-  console.log("createUI...");
+  // console.log("createUI...");
   // console.log(currentData);
   switch (currentData.type) {
     case "text":
-      console.log("text");
+      // console.log("text");
       if (
         currentData.next &&
         currentData.next.expectation &&
@@ -414,7 +408,7 @@ function createUI(currentData) {
       break;
     case "button":
     case "quickReply":
-      console.log("button / QuickReply");
+      // console.log("button / QuickReply");
       for (i in currentData.next.data) {
         if (!currentData.next.data[i].type) {
           display =
@@ -439,15 +433,15 @@ function createUI(currentData) {
             );
         }
       }
-      console.log(display);
+      // console.log(display);
       break;
     case "generic":
-      console.log("generic");
+      // console.log("generic");
       display = display + createGeneric(currentData.next.data);
-      console.log(display);
+      // console.log(display);
       break;
     default:
-      console.log("Not a type");
+      // console.log("Not a type");
       break;
   }
 
@@ -456,17 +450,17 @@ function createUI(currentData) {
 }
 
 function displayChat(view) {
-  console.log("displayChat...");
+  // console.log("displayChat...");
   $(".chat").append(view);
 }
 
 function clearChat() {
-  console.log("clearChat...");
+  // console.log("clearChat...");
   $(".chat").empty();
 }
 
 function createButton(data, text) {
-  console.log("Create Button");
+  // console.log("Create Button");
   // console.log("data", data);
   // console.log("text", text);
   return (
@@ -479,7 +473,7 @@ function createButton(data, text) {
 }
 
 function createButtonURL(data, text) {
-  console.log("Create Button URL");
+  // console.log("Create Button URL");
   // console.log("data", data);
   // console.log("text", text);
   return (
@@ -492,7 +486,7 @@ function createButtonURL(data, text) {
 }
 
 function createButtonWebView(data, text) {
-  console.log("Create Button Web View");
+  // console.log("Create Button Web View");
   // console.log("data", data);
   // console.log("text", text);
   return (
@@ -505,8 +499,8 @@ function createButtonWebView(data, text) {
 }
 
 function createText(pattern) {
-  console.log("Create Text");
-  console.log(pattern);
+  // console.log("Create Text");
+  // console.log(pattern);
   if (pattern == undefined) {
     pattern = /\w+/;
   } else {
@@ -520,7 +514,7 @@ function createText(pattern) {
 }
 
 function createGeneric(data) {
-  console.log("Create Carousel");
+  // console.log("Create Carousel");
   // console.log("data", data);
   var carousel = "";
   for (i in data) {
@@ -541,7 +535,7 @@ function createGeneric(data) {
 }
 
 function carouselButtons(buttons) {
-  console.log("Carousel Buttons");
+  // console.log("Carousel Buttons");
   var genericButtons = "";
   for (i in buttons) {
     // console.log("Carousel -> Next -> Data[] -> Buttons[]" + i);
@@ -552,7 +546,7 @@ function carouselButtons(buttons) {
 }
 
 function replayFlow() {
-  console.log("replayFlow()");
+  // console.log("replayFlow()");
   currentStageNum = -1;
   display =
     display +
@@ -561,17 +555,17 @@ function replayFlow() {
 
 function validate(pattern) {
   //var pattern = /^[a-zA-Z]+$/;
-  console.log("validate...");
-  console.log(pattern);
+  // console.log("validate...");
+  // console.log(pattern);
   var input = $(".response-text").val();
-  console.log("response-text.val() = ", input);
+  // console.log("response-text.val() = ", input);
   if (input == "") {
     $(".send").hide(); //attr("disabled", true);
   } else if (pattern.test(input) && input != "") {
-    console.log("correct input...");
+    // console.log("correct input...");
     $(".send").show(); //attr("disabled", false);
   } else {
-    console.log("reject input...");
+    // console.log("reject input...");
     $(".send").hide(); //attr("disabled", true);
   }
 }
