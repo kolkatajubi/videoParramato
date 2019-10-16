@@ -552,13 +552,15 @@ function replayFlow() {
 
 function validate(tag) {
   console.log("Validate called...");
+  console.log(tag);
+  console.log(tag.getAttribute("id"));
   // $(".response-text").onchange = function() {
   // console.log("validate name called ");
-  if (tag.getAttribute("id") == "name") {
+  if (tag.getAttribute("id") === "name") {
     console.log("name validation...");
     validate_input(/^[a-zA-Z]+$/);
   }
-  if (tag.getAttribute("id") == "number") {
+  if (tag.getAttribute("id") === "number") {
     console.log("number validation...");
     validate_input(/^d+$/);
   } else {
