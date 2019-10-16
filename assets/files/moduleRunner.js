@@ -218,6 +218,12 @@ $(document).ready(() => {
   //     console.log("Error");
   //   }
   // });
+  // -----------------------------------------input onchange listener--------------------------------
+  $(".response-text").onchange = function() {
+    console.log("validate name called ");
+    validate_name();
+  };
+  // ------------------------------------------------------------------------------------------
 
   document.addEventListener("fullscreenchange", exitHandler);
   document.addEventListener("webkitfullscreenchange", exitHandler);
@@ -396,7 +402,7 @@ function createUI(currentData) {
     case "text":
       console.log("text");
       display = display + createText();
-      validateButton();
+      // validateButton();
       break;
     case "button":
     case "quickReply":
@@ -546,10 +552,10 @@ function replayFlow() {
 
 function validateButton() {
   console.log("disable Button called");
-  $(".response-text").onchange = function() {
-    console.log("validate name called ");
-    validate_name();
-  };
+  // $(".response-text").onchange = function() {
+  //   console.log("validate name called ");
+  //   validate_name();
+  // };
 }
 
 function validate_name() {
