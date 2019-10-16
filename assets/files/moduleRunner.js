@@ -140,7 +140,7 @@ var flow = {
         expectation: {
           invalidMessage: "",
           type: "regex",
-          val: "\\d+"
+          val: "/\\d+/"
         }
       }
     },
