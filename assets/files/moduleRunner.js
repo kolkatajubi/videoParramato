@@ -260,7 +260,7 @@ $(document).ready(() => {
       if (status == 0)
         if (videoTime >= videoDuration - 1.0) {
           status = 1;
-          console.log("1secs left...");
+          // console.log("1secs left...");
           createUI(currentData);
         }
     }, 100);
