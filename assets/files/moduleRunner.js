@@ -507,7 +507,7 @@ function createButtonWebView(data, text) {
 
 function createText() {
   console.log("Create Text Input");
-  return `<input id='name' class='response-text' type='text' onkeyup='validateButton();' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`;
+  return `<input id='name' class='response-text' type='text' onkeyup='validate(this);' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`;
 }
 
 function createGeneric(data) {
@@ -550,21 +550,32 @@ function replayFlow() {
     `<button class ='response-button' value='replay' onclick='getNextStageData();'>Replay</button>`;
 }
 
-function validateButton() {
-  console.log("disable Button called");
+function validate(tag) {
+  console.log("Validate called...");
   // $(".response-text").onchange = function() {
-  console.log("validate name called ");
-  validate_name();
+  // console.log("validate name called ");
+  if (tag.getAttribute("id") == "name") {
+    console.log("name validation...");
+    validate_name("/^[a-zA-Z]+$/");
+  }
+  if (tag.getAttribute("id") == "number") {
+    console.log("number validation...");
+    validate_input("/^d+$/");
+  } else {
+    console.log("id not given...");
+  }
+
   // };
 }
 
-function validate_name() {
-  var pattern = /^[a-zA-Z ]+$/;
+function validate_input(pattern) {
+  console.log(pattern);
   var name = $(".response-text").val();
   console.log("resp text. val () = ", name);
-  if (name == "") {
-    $(".send").attr("disabled", true);
-  } else if (pattern.test(name) && name != "") {
+  // if (name == "") {
+  //   $(".send").attr("disabled", true);
+  // } else
+  if (pattern.test(name)) {
     $(".send").attr("disabled", false);
   } else {
     $(".send").attr("disabled", true);
