@@ -561,7 +561,7 @@ function validate(tag) {
     validate_input(/^[a-zA-Z]+$/);
   } else if (tag.getAttribute("id") == "number") {
     console.log("number validation...");
-    validate_input("^d+$");
+    validate_input(/^d+$/);
   } else {
     console.log("id not given...");
   }
