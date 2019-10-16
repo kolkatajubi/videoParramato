@@ -507,7 +507,7 @@ function createButtonWebView(data, text) {
 
 function createText() {
   console.log("Create Text Input");
-  return `<input id='name' class='response-text' type='text' onkeyup='validate(this);' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`;
+  return `<input id='number' class='response-text' type='text' onkeyup='validate(this);' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`;
 }
 
 function createGeneric(data) {
@@ -556,13 +556,12 @@ function validate(tag) {
   console.log(tag.getAttribute("id"));
   // $(".response-text").onchange = function() {
   // console.log("validate name called ");
-  if (tag.getAttribute("id") === "name") {
+  if (tag.getAttribute("id") == "name") {
     console.log("name validation...");
     validate_input(/^[a-zA-Z]+$/);
-  }
-  if (tag.getAttribute("id") === "number") {
+  } else if (tag.getAttribute("id") == "number") {
     console.log("number validation...");
-    validate_input(/^d+$/);
+    validate_input("^d+$");
   } else {
     console.log("id not given...");
   }
