@@ -483,11 +483,11 @@ function createButtonURL(data, text) {
   // console.log("data", data);
   // console.log("text", text);
   return (
-    `<button class ='response-button' onclick='getNextStageData(); window.open('` +
+    `<button class ='response-button' onclick='getNextStageData(); window.open("` +
     data +
-    `');' >` +
+    `");'>` +
     text +
-    `</button>`
+    "</button>"
   );
 }
 
