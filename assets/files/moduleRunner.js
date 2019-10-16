@@ -559,7 +559,7 @@ function validateButton() {
 }
 
 function validate_name() {
-  var pattern = /^[a-zA-Z ]*$/;
+  var pattern = /^[a-zA-Z ]+$/;
   var name = $(".response-text").val();
   console.log("resp text. val () = ", name);
   if (name == "") {
