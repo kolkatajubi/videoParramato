@@ -219,10 +219,10 @@ $(document).ready(() => {
   //   }
   // });
   // -----------------------------------------input onchange listener--------------------------------
-  $(".response-text").onchange = function() {
+  $(".response-text").addEventListener("change", function() {
     console.log("validate name called ");
     validate_name();
-  };
+  });
   // ------------------------------------------------------------------------------------------
 
   document.addEventListener("fullscreenchange", exitHandler);
