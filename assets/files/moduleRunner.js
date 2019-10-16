@@ -507,7 +507,7 @@ function createButtonWebView(data, text) {
 
 function createText() {
   console.log("Create Text Input");
-  return `<input id='name' class='response-text' type='text' onchange="validateButton()" placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`;
+  return `<input id='name' class='response-text' type='text' onchange='validateButton();' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`;
 }
 
 function createGeneric(data) {
@@ -552,10 +552,10 @@ function replayFlow() {
 
 function validateButton() {
   console.log("disable Button called");
-  $(".response-text").onchange = function() {
-    console.log("validate name called ");
-    validate_name();
-  };
+  // $(".response-text").onchange = function() {
+  console.log("validate name called ");
+  validate_name();
+  // };
 }
 
 function validate_name() {
