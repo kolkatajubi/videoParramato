@@ -509,6 +509,8 @@ function createText(pattern) {
   console.log(pattern);
   if (pattern == undefined) {
     pattern = /\w+/;
+  } else {
+    pattern = `/` + pattern + `/`;
   }
   return (
     `<input id='name' class='response-text' type='text' onkeyup='validate(` +
