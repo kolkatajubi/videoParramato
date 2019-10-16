@@ -346,11 +346,11 @@ function getNextStageData(nextStage) {
   display = ""; // HTML DOM elements to be displayed
   if (nextStage == undefined) {
     currentStageNum += 1;
-    console.log("currentStageNum : ", currentStageNum);
+    // console.log("currentStageNum : ", currentStageNum);
     currentData = flow.stages[currentStageNum];
     // console.log(JSON.stringify(currentData, 0, 3));
     // if (base64loaded == "not yet") {
-    console.log("Video Data from URL...");
+    // console.log("Video Data from URL...");
     videoDisplay(currentData.video);
     // } else {
     //   console.log("Video Data from base64...");
