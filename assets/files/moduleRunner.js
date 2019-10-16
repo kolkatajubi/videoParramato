@@ -546,7 +546,7 @@ function replayFlow() {
 
 function validateButton() {
   console.log("disable Button called");
-  $(".response-text").focusout(function() {
+  $(".response-text").onchange(function() {
     console.log("validate name called ");
     validate_name();
   });
