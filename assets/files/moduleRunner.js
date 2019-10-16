@@ -556,12 +556,14 @@ function replayFlow() {
 function validate(pattern) {
   //var pattern = /^[a-zA-Z ]+$/;
   var input = $(".response-text").val();
-  console.log("resp text. val () = ", input);
+  console.log("response-text.val() = ", input);
   if (input == "") {
     $(".send").hide(); //attr("disabled", true);
   } else if (pattern.test(input) && input != "") {
+    console.log("correct input...");
     $(".send").show(); //attr("disabled", false);
   } else {
+    console.log("reject input...");
     $(".send").hide(); //attr("disabled", true);
   }
 }
