@@ -507,7 +507,7 @@ function createButtonWebView(data, text) {
 function createText(pattern) {
   if (pattern == undefined) {
     console.log("Create Text Input");
-    return `<input id='name' class='response-text' type='text' onkeyup='validate("/[\w]+/");' placeholder='enter here ...' /> <button class='send' style='display:none;' onclick='getNextStageData();'>Send</button>`;
+    return `<input id='name' class='response-text' type='text' onkeyup='validate("/[\\w]+/");' placeholder='enter here ...' /> <button class='send' style='display:none;' onclick='getNextStageData();'>Send</button>`;
   } else {
     return (
       `<input id='name' class='response-text' type='text' onkeyup='validate(` +
