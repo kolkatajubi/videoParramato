@@ -140,7 +140,7 @@ var flow = {
         expectation: {
           invalidMessage: "",
           type: "regex",
-          val: "\\w+"
+          val: "\\d+"
         }
       }
     },
@@ -401,7 +401,15 @@ function createUI(currentData) {
   switch (currentData.type) {
     case "text":
       console.log("text");
-      display = display + createText();
+      if (
+        currentData.next &&
+        currentData.next.expectation &&
+        currentData.next.expectation.type == "regex"
+      ) {
+        display = display + createText(currentData.next.expectation.val);
+      } else {
+        display = display + createText();
+      }
       // validateButton();
       break;
     case "button":
@@ -469,16 +477,7 @@ function createButton(data, text) {
     `</button>`
   );
 }
-// function createCarouselButton(data, text) {
-//   console.log("Create Button");
-//   return (
-//     `<button class ='generic-button' value='` +
-//     data +
-//     `' onclick='' >` +
-//     text +
-//     `</button>`
-//   );
-// }
+
 function createButtonURL(data, text) {
   console.log("Create Button URL");
   // console.log("data", data);
@@ -505,9 +504,13 @@ function createButtonWebView(data, text) {
   );
 }
 
-function createText() {
-  console.log("Create Text Input");
-  return `<input id='number' class='response-text' type='text' onkeyup='validate(this);' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`;
+function createText(pattern) {
+  if (pattern == undefined) {
+    console.log("Create Text Input");
+    return `<input id='name' class='response-text' type='text' onkeyup='validate(/\w+/);' placeholder='enter here ...' /> <button class='send' style='display:none;' onclick='getNextStageData();'>Send</button>`;
+  } else {
+    return `<input id='name' class='response-text' type='text' onkeyup='validate(pattern);' placeholder='enter here ...' /> <button class='send' style='display:none;' onclick='getNextStageData();'>Send</button>`;
+  }
 }
 
 function createGeneric(data) {
@@ -550,35 +553,15 @@ function replayFlow() {
     `<button class ='response-button' value='replay' onclick='getNextStageData();'>Replay</button>`;
 }
 
-function validate(tag) {
-  console.log("Validate called...");
-  console.log(tag);
-  console.log(tag.getAttribute("id"));
-  // $(".response-text").onchange = function() {
-  // console.log("validate name called ");
-  if (tag.getAttribute("id") == "name") {
-    console.log("name validation...");
-    validate_input(/^[a-zA-Z]+$/);
-  } else if (tag.getAttribute("id") == "number") {
-    console.log("number validation...");
-    validate_input(/^\d+$/);
+function validate(pattern) {
+  //var pattern = /^[a-zA-Z ]+$/;
+  var input = $(".response-text").val();
+  console.log("resp text. val () = ", input);
+  if (input == "") {
+    $(".send").hide(); //attr("disabled", true);
+  } else if (pattern.test(input) && input != "") {
+    $(".send").show(); //attr("disabled", false);
   } else {
-    console.log("id not given...");
-  }
-
-  // };
-}
-
-function validate_input(pattern) {
-  console.log(pattern);
-  var name = $(".response-text").val();
-  console.log("resp text. val () = ", name);
-  // if (name == "") {
-  //   $(".send").attr("disabled", true);
-  // } else
-  if (pattern.test(name)) {
-    $(".send").attr("disabled", false);
-  } else {
-    $(".send").attr("disabled", true);
+    $(".send").hide(); //attr("disabled", true);
   }
 }
