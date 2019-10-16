@@ -140,7 +140,7 @@ var flow = {
         expectation: {
           invalidMessage: "",
           type: "regex",
-          val: "\\d+"
+          val: "^[\\d]+$"
         }
       }
     },
@@ -483,11 +483,11 @@ function createButtonURL(data, text) {
   // console.log("data", data);
   // console.log("text", text);
   return (
-    `<button><a class ='response-button' href='` +
+    `<button class ='response-button' onclick='getNextStageData(); window.open('` +
     data +
-    `' onclick='getNextStageData();' >` +
+    `');' >` +
     text +
-    `</a></button>`
+    `</button>`
   );
 }
 
