@@ -505,6 +505,7 @@ function createButtonWebView(data, text) {
 }
 
 function createText(pattern) {
+  console.log("Create Text");
   console.log(pattern);
   if (pattern == undefined) {
     pattern = /\w+/;
@@ -558,6 +559,7 @@ function replayFlow() {
 
 function validate(pattern) {
   //var pattern = /^[a-zA-Z]+$/;
+  console.log("validate...");
   console.log(pattern);
   var input = $(".response-text").val();
   console.log("response-text.val() = ", input);
