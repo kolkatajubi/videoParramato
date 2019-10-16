@@ -140,7 +140,7 @@ var flow = {
         expectation: {
           invalidMessage: "",
           type: "regex",
-          val: /\\d+/
+          val: /[\d]+/
         }
       }
     },
@@ -507,7 +507,7 @@ function createButtonWebView(data, text) {
 function createText(pattern) {
   if (pattern == undefined) {
     console.log("Create Text Input");
-    return `<input id='name' class='response-text' type='text' onkeyup='validate(/\w+/);' placeholder='enter here ...' /> <button class='send' style='display:none;' onclick='getNextStageData();'>Send</button>`;
+    return `<input id='name' class='response-text' type='text' onkeyup='validate(/[\w]+/);' placeholder='enter here ...' /> <button class='send' style='display:none;' onclick='getNextStageData();'>Send</button>`;
   } else {
     return (
       `<input id='name' class='response-text' type='text' onkeyup='validate(` +
@@ -558,7 +558,7 @@ function replayFlow() {
 }
 
 function validate(pattern) {
-  //var pattern = /^[a-zA-Z ]+$/;
+  //var pattern = /^[a-zA-Z]+$/;
   console.log(pattern);
   var input = $(".response-text").val();
   console.log("response-text.val() = ", input);
