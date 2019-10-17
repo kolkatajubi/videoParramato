@@ -85,6 +85,12 @@ input {
   outline: none;
   border: none;
 }
+
+iframe {
+  width: 400px;
+  height: 600px;
+  background: white;
+}
 /* 
 video::-webkit-media-controls-play-button {
   cursor: not-allowed;
