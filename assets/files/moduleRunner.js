@@ -489,8 +489,15 @@ function createButtonURL(data, text) {
   // console.log("Create Button URL");
   // console.log("data", data);
   // console.log("text", text);
+  // return (
+  //   `<button class ='response-button' onclick='window.open("` +
+  //   data +
+  //   `"); showSkip();'>` +
+  //   text +
+  //   "</button>"
+  // );
   return (
-    `<button class ='response-button' onclick='window.open("` +
+    `<button class ='display' onclick='window.open("` +
     data +
     `"); showSkip();'>` +
     text +
@@ -505,9 +512,9 @@ function createButtonWebView(data, text) {
   return (
     `<iframe class='response-webview' src='` +
     data +
-    `' onclick='getNextStageData(); showSkip();' >` +
+    `' onclick='getNextStageData();' >` +
     text +
-    `</iframe>`
+    `</iframe><script>showSkip();</script>`
   );
 }
 
