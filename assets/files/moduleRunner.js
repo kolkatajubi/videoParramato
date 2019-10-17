@@ -571,12 +571,15 @@ function validate(pattern) {
   var input = $(".response-text").val();
   // console.log("response-text.val() = ", input);
   if (input == "") {
-    $(".send").hide(); //attr("disabled", true);
+    $(".response-text").css("border-bottom", "2px solid #F90A0A");
+    $(".send").hide(); //.attr("disabled", true);
   } else if (pattern.test(input) && input != "") {
     // console.log("correct input...");
     $(".send").show(); //attr("disabled", false);
+    $(".response-text").css("border-bottom", "2px solid #34F458");
   } else {
     // console.log("reject input...");
     $(".send").hide(); //attr("disabled", true);
+    $(".respnse-text").css("border-bottom", "2px solid #F90A0A");
   }
 }
