@@ -249,6 +249,9 @@ $(document).ready(() => {
     // getNextStageData("stageWV");
 
     getNextStageData();
+    function blurBackground() {
+      getElementById("video").style.filter.blurBackground = true;
+    }
 
     setInterval(() => {
       // console.log("setInterval...");
@@ -268,9 +271,6 @@ $(document).ready(() => {
   })();
 });
 
-function blurBackground() {
-  getElementById("video").style.filter.blurBackground = true;
-}
 function playPause() {
   FS();
   // console.log("play called fullscreen...");
