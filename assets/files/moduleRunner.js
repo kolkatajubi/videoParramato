@@ -267,17 +267,21 @@ $(document).ready(() => {
     }, 100);
   })();
 });
+
 function removeBlurBackground() {
   document.getElementById("myVideo").style.filter = "blur(0px)";
 }
+
 function blurBackground() {
   document.getElementById("myVideo").style.filter = "blur(10px)";
 }
+
 function playPause() {
   FS();
   // console.log("play called fullscreen...");
   if (myVideo.paused) {
     $("#playImg").hide();
+    removeBlurBackground();
     myVideo.play();
     // document.getElementById("playpause").innerHTML = "PAUSE";
   } else {
@@ -509,7 +513,7 @@ function createText(pattern) {
   // console.log("Create Text");
   // console.log(pattern);
   if (pattern == undefined) {
-    pattern = /\w+/;
+    pattern = /.+/;
   } else {
     pattern = `/` + pattern + `/`;
   }
