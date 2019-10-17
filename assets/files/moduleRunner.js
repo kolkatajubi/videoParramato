@@ -502,20 +502,20 @@ function createButtonWebView(data, text) {
   // console.log("Create Button Web View");
   // console.log("data", data);
   // console.log("text", text);
-  // return (
-  //   `<iframe class='response-webview' src='` +
-  //   data +
-  //   `' onclick='getNextStageData();' >` +
-  //   text +
-  //   `</iframe><script>showSkip();</script>`
-  // );
   return (
-    `<iframe class='video' src='` +
+    `<iframe class='response-webview' src='` +
     data +
     `' onclick='getNextStageData();' >` +
     text +
     `</iframe><script>showSkip();</script>`
   );
+  // return (
+  //   `<iframe class='video' src='` +
+  //   data +
+  //   `' onclick='getNextStageData();' >` +
+  //   text +
+  //   `</iframe><script>showSkip();</script>`
+  // );
 }
 
 function createSkip() {
