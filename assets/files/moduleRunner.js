@@ -261,9 +261,9 @@ $(document).ready(() => {
         if (videoTime >= videoDuration - 0.5) {
           status = 1;
           // console.log("1secs left...");
-          blurBackground();
           createUI(currentData);
         }
+      if (videoTime == videoDuration) blurBackground();
     }, 100);
   })();
 });
