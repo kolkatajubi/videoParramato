@@ -520,7 +520,7 @@ function createText(pattern) {
   return (
     `<input id='name' class='response-text' type='text' onkeyup='validate(` +
     pattern +
-    `);' placeholder='enter here ...' /> <button class='send' disabled style='display:none;' onclick='getNextStageData();'>Send</button>`
+    `);' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`
   );
 }
 
