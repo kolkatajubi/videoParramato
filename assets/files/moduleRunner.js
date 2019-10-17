@@ -261,12 +261,16 @@ $(document).ready(() => {
         if (videoTime >= videoDuration - 1.0) {
           status = 1;
           // console.log("1secs left...");
+          blurBackground();
           createUI(currentData);
         }
     }, 100);
   })();
 });
 
+function blurBackground() {
+  getElementById("video").style.filter.blurBackground = true;
+}
 function playPause() {
   FS();
   // console.log("play called fullscreen...");
