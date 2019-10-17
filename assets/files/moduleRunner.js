@@ -267,7 +267,9 @@ $(document).ready(() => {
     }, 100);
   })();
 });
-
+function removeBlurBackground() {
+  document.getElementById("myVideo").style.filter = "blur(0px)";
+}
 function blurBackground() {
   document.getElementById("myVideo").style.filter = "blur(10px)";
 }
@@ -344,6 +346,7 @@ for (i = 0; i < flow.stages.length; i++) {
 function getNextStageData(nextStage) {
   // console.log("getNextStageData...");
   clearChat();
+  removeBlurBackground();
   $("#playImg").hide();
   status = 0;
   currentData = {}; // Stores current stage data
