@@ -512,7 +512,7 @@ function createButtonWebView(data, text) {
 }
 
 function createSkip() {
-  return `<button class ='skip' value='skip' onclick='getNextStageData();' 'display:none;'>Skip</button>`;
+  return `<button class ='skip' value='skip' onclick='getNextStageData();' style='display:none;'>Skip</button>`;
 }
 
 function showSkip() {
