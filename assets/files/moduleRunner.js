@@ -520,7 +520,7 @@ function createText(pattern) {
   return (
     `<input id='name' class='response-text' type='text' onkeyup='validate(` +
     pattern +
-    `);' placeholder='enter here ...' /> <button class='send' style='display:none;' onclick='getNextStageData();'>Send</button>`
+    `);' placeholder='enter here ...' /> <button class='send' disabled style='display:none;' onclick='getNextStageData();'>Send</button>`
   );
 }
 
@@ -572,14 +572,14 @@ function validate(pattern) {
   // console.log("response-text.val() = ", input);
   if (input == "") {
     $(".response-text").css("border-bottom", "2px solid #F90A0A");
-    $(".send").hide(); //.attr("disabled", true);
+    $(".send").attr("disabled", true);
   } else if (pattern.test(input) && input != "") {
     // console.log("correct input...");
-    $(".send").show(); //attr("disabled", false);
+    $(".send").attr("disabled", false);
     $(".response-text").css("border-bottom", "2px solid #34F458");
   } else {
     // console.log("reject input...");
-    $(".send").hide(); //attr("disabled", true);
+    $(".send").attr("disabled", true);
     $(".respnse-text").css("border-bottom", "2px solid #F90A0A");
   }
 }
