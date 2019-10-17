@@ -269,7 +269,7 @@ $(document).ready(() => {
 });
 
 function blurBackground() {
-  document.getElementById("video").style.filter.blurBackground = true;
+  document.getElementById("myVideo").style.filter = "blur(10px)";
 }
 function playPause() {
   FS();
