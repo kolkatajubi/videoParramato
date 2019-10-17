@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main_web_page {
+  position: relative;
+  margin: 0 20px 0 20px;
+}
+
+.main_web_page .backbtn {
+  position: absolute;
+  top: 5px;
+}
+
+.backbtn .btn_back_btn {
+  background-color: orangered;
+  width: 85px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}
+
+.main_web_page .header {
+  position: absolute;
+  top: 50px;
+  left: 380px;
+  font-size: 25px;
+  color: orangered;
+}
+
+.main_web_page .left_page {
+  border: none;
+  width: 50%;
+  position: relative;
+  float: left;
+  top: 90px;
+  height: 60vh;
+  margin-bottom: 15px;
+}
+
+.main_web_page .right_page {
+  border: none;
+  width: 49%;
+  position: relative;
+  float: right;
+  top: 90px;
+  height: 60vh;
+  margin-bottom: 15px;
+}
+
+.left_page .form1,
+.right_page .form2 {
+  position: relative;
+  width: 100%;
+  top: 2px;
+  padding: 0 5px 0 5px;
+}
+
+.form1 p {
+  color: rgb(94, 89, 89);
+}
+
+.form1 .firstname_field,
+.lastname_field,
+.number_field,
+.salary_field,
+.email_field,
+.official_field,
+.pan_field,
+.marital_field,
+.residential_field {
+  position: absolute;
+  left: 1px;
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+.marital_field,
+.residential_field {
+  border-bottom: 2px solid black;
+}
+
+.main_web_page .confirm_btn {
+  position: absolute;
+  top: 550px;
+  left: 43%;
+}
+
+.confirm_btn .btn_submit_btn {
+  width: 130px;
+  height: 35px;
+  background-color: orangered;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  font-size: 15px;
+}
+
+/*====================================
+        Resopnsive
+====================================*/
+
+@media (max-width: 767px) {
+  body {
+    margin: 0;
+  }
+  .main_web_page .header {
+    left: 30px;
+  }
+
+  .main_web_page .confirm_btn {
+    left: 30%;
+  }
+}
