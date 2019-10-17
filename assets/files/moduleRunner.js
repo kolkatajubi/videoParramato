@@ -489,7 +489,6 @@ function createButtonURL(data, text) {
   // console.log("Create Button URL");
   // console.log("data", data);
   // console.log("text", text);
-  document.getElementById();
   return (
     `<button class ='response-button' onclick='window.open("` +
     data +
