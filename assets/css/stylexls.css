@@ -80,6 +80,10 @@ input {
   border-radius: 10px;
 }
 
+.response-text {
+  outline: none;
+  border: none;
+}
 /* 
 video::-webkit-media-controls-play-button {
   cursor: not-allowed;
