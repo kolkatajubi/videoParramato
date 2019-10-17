@@ -102,11 +102,11 @@ var flow = {
             type: "url",
             data: "https://www.bajajfinservmarkets.in/cust/#/?product=NPS",
             text: "Invest in NPS"
-          },
-          {
-            data: "Skip",
-            text: "Skip"
           }
+          // {
+          //   data: "Skip",
+          //   text: "Skip"
+          // }
         ]
       }
     },
@@ -123,11 +123,11 @@ var flow = {
             type: "webView",
             data: "https://pixie.jubi.ai/videoParramato/webview",
             text: "Invest in NPS"
-          },
-          {
-            data: "Skip",
-            text: "Skip"
           }
+          // {
+          //   data: "Skip",
+          //   text: "Skip"
+          // }
         ]
       }
     },
@@ -434,14 +434,16 @@ function createUI(currentData) {
             createButtonURL(
               currentData.next.data[i].data,
               currentData.next.data[i].text
-            );
+            ) +
+            createSkip();
         } else if (currentData.next.data[i].type === "webView") {
           display =
             display +
             createButtonWebView(
               currentData.next.data[i].data,
               currentData.next.data[i].text
-            );
+            ) +
+            createSkip();
         }
       }
       // console.log(display);
@@ -487,10 +489,11 @@ function createButtonURL(data, text) {
   // console.log("Create Button URL");
   // console.log("data", data);
   // console.log("text", text);
+  document.getElementById();
   return (
     `<button class ='response-button' onclick='window.open("` +
     data +
-    `");'>` +
+    `"); showSkip();'>` +
     text +
     "</button>"
   );
@@ -503,10 +506,18 @@ function createButtonWebView(data, text) {
   return (
     `<iframe class='response-webview' src='` +
     data +
-    `' onclick='getNextStageData();' >` +
+    `' onclick='getNextStageData(); showSkip();' >` +
     text +
     `</iframe>`
   );
+}
+
+function createSkip() {
+  return `<button class ='skip' value='skip' onclick='getNextStageData();' 'display:none;'>Skip</button>`;
+}
+
+function showSkip() {
+  $(".skip").show();
 }
 
 function createText(pattern) {
