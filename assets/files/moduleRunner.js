@@ -258,7 +258,7 @@ $(document).ready(() => {
       var videoTime = document.getElementById("myVideo").currentTime.toFixed(2);
       // console.log(videoTime);
       if (status == 0)
-        if (videoTime >= videoDuration - 1.0) {
+        if (videoTime >= videoDuration - 0.5) {
           status = 1;
           // console.log("1secs left...");
           blurBackground();
