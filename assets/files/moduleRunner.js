@@ -351,6 +351,7 @@ function getNextStageData(nextStage) {
   // console.log("Next Stage ... ", nextStage);
   clearChat();
   removeBlurBackground();
+  FS();
   $("#playImg").hide();
   status = 0;
   currentData = {}; // Stores current stage data

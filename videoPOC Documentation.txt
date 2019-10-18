@@ -1,7 +1,7 @@
 	********************************* FILES Structure ************************************
 	
-	videoParramato:
-		server.js -> node module to host files from the server
+	videoParramato:	
+	server.js -> node module to host files from the server
 		asset:
 			css:
 				sylexls.css		-> light theme css for flow
@@ -13,6 +13,18 @@
 				style.css		-> css for webview
 			videos:
 				<contains videos>
+				
+				
+	Files for FrontEnd :
+		sylexls.css		
+		styledark.css
+		moduleRunner.js
+		index.html
+		webview.html
+		style.css
+		videos
+		
+				
 				
 	
 
@@ -157,3 +169,16 @@
 		var fullscreen = 0; 	-> Tracks if the view is fullscreen or not
 		
 	**************************************************************************************
+	
+	
+	
+	
+	******************************** DATA FLOW DIGRAM *************************************
+	
+	
+	
+	
+	
+	
+	
+	
