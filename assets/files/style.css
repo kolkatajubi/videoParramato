@@ -108,8 +108,11 @@ body {
 @media (max-width: 767px) {
   body {
     margin: 0;
-    max-height: 720px;
-    max-width: 480px;
+  }
+.main_web_page {
+    overflow-y: auto;
+    max-height: 364px;
+    max-width: 540px;
   }
   .main_web_page .header {
     left: 30px;
