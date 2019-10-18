@@ -117,3 +117,21 @@ body {
     left: 30%;
   }
 }
+
+@media (max-width: 480px) {
+  body {
+    margin: 0;
+  }
+
+  .main_web_page {
+    width: 100%;
+  }
+
+  .main_web_page .header {
+    left: 30px;
+  }
+
+  .main_web_page .confirm_btn {
+    left: 30%;
+  }
+}
