@@ -349,11 +349,8 @@ for (i = 0; i < flow.stages.length; i++) {
 // getNextStageData will return the next stage data and display video
 function getNextStageData(nextStage) {
   // console.log("Next Stage ... ", nextStage);
-  playPause();
-  playPause();
   clearChat();
   removeBlurBackground();
-  // FS();
   $("#playImg").hide();
   status = 0;
   currentData = {}; // Stores current stage data
@@ -600,6 +597,6 @@ function validate(pattern) {
   } else {
     // console.log("reject input...");
     $(".send").attr("disabled", true);
-    $(".respnse-text").css("border-bottom", "2px solid #F90A0A");
+    $(".response-text").css("border-bottom", "2px solid #F90A0A");
   }
 }
