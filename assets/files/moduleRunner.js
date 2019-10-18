@@ -351,7 +351,7 @@ function getNextStageData(nextStage) {
   // console.log("Next Stage ... ", nextStage);
   clearChat();
   removeBlurBackground();
-  // FS();
+  FS();
   $("#playImg").hide();
   status = 0;
   currentData = {}; // Stores current stage data
@@ -493,7 +493,7 @@ function createButtonURL(data, text) {
   return (
     `<button class ='response-button' onclick='window.open("` +
     data +
-    `"); showSkip();'>` +
+    `"); fullscreen=0; showSkip();'>` +
     text +
     "</button>"
   );

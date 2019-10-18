@@ -37,7 +37,7 @@
 		  projectId: "finservVoiceUat_111217597624559107965",
 		  id: "finservVoiceUat_111217597624559107965-insurance",
 		  theme: "light",				-> sets the theme of the flow 
-		  voice: "female"				-> stes the voice of the video (only if the video has dual voice else the default voice)
+		  voice: "female"				-> sets the voice of the video (only if the video has dual voice else the default voice)
 		  stages:[<This will contain flow data i.e the stages >],
 		  folder: "personalLoanLending"
 		};
