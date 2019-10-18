@@ -109,11 +109,6 @@ body {
   body {
     margin: 0;
   }
-.main_web_page {
-    overflow-y: auto;
-    max-height: 364px;
-    max-width: 540px;
-  }
   .main_web_page .header {
     left: 30px;
   }

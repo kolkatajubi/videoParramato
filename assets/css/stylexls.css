@@ -91,6 +91,21 @@ iframe {
   height: 600px;
   background: white;
 }
+
+/*================================
+            Responsive
+==================================*/
+
+@media (max-width: 767px) {
+  body {
+    margin: 0;
+  }
+
+  iframe {
+    max-width: 350px;
+    max-height: 400px;
+  }
+}
 /* 
 video::-webkit-media-controls-play-button {
   cursor: not-allowed;
