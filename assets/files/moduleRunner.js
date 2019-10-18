@@ -348,7 +348,7 @@ for (i = 0; i < flow.stages.length; i++) {
 
 // getNextStageData will return the next stage data and display video
 function getNextStageData(nextStage) {
-  // console.log("getNextStageData...");
+  console.log("Next Stage ... ", nextStage);
   clearChat();
   removeBlurBackground();
   $("#playImg").hide();
