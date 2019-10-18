@@ -493,7 +493,7 @@ function createButtonURL(data, text) {
   return (
     `<button class ='response-button' onclick='window.open("` +
     data +
-    `"); fullscreen=0; showSkip();'>` +
+    `"); exitHandler(); showSkip();'>` +
     text +
     "</button>"
   );
