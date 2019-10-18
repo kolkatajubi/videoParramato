@@ -349,9 +349,11 @@ for (i = 0; i < flow.stages.length; i++) {
 // getNextStageData will return the next stage data and display video
 function getNextStageData(nextStage) {
   // console.log("Next Stage ... ", nextStage);
+  playPause();
+  playPause();
   clearChat();
   removeBlurBackground();
-  FS();
+  // FS();
   $("#playImg").hide();
   status = 0;
   currentData = {}; // Stores current stage data
@@ -493,7 +495,7 @@ function createButtonURL(data, text) {
   return (
     `<button class ='response-button' onclick='window.open("` +
     data +
-    `"); exitHandler(); showSkip();'>` +
+    `"); showSkip();'>` +
     text +
     "</button>"
   );
