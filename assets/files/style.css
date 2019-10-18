@@ -125,6 +125,8 @@ body {
 
   .main_web_page {
     width: 93vw;
+    overflow: none;
+    height: 93vh;
   }
 
   .main_web_page .header {
