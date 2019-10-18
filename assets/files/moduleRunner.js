@@ -16,32 +16,32 @@ var flow = {
         data: [
           {
             data: "Health Insurance",
-            text: "Health Insurance🏥"
-          },
-          {
-            data: "ULIP",
-            text: " ULIP💸"
-          },
-          {
-            data: "Travel Insurance",
-            text: " Travel  Insurance ✈️"
-          },
-          {
-            data: "Cyber Insurance",
-            text: "Cyber Insurance💻"
-          },
-          {
-            data: " MotorInsurance",
-            text: " Motor Insurance 🚗"
-          },
-          {
-            data: " pocket",
-            text: " Sachet Insurance👝"
-          },
-          {
-            data: "offer",
-            text: " Group Term Life 🎁"
+            text: "OKAY Lets Continue"
           }
+          // {
+          //   data: "ULIP",
+          //   text: " ULIP💸"
+          // },
+          // {
+          //   data: "Travel Insurance",
+          //   text: " Travel  Insurance ✈️"
+          // },
+          // {
+          //   data: "Cyber Insurance",
+          //   text: "Cyber Insurance💻"
+          // },
+          // {
+          //   data: " MotorInsurance",
+          //   text: " Motor Insurance 🚗"
+          // },
+          // {
+          //   data: " pocket",
+          //   text: " Sachet Insurance👝"
+          // },
+          // {
+          //   data: "offer",
+          //   text: " Group Term Life 🎁"
+          // }
         ],
         expectation: {
           invalidMessage:
@@ -348,7 +348,7 @@ for (i = 0; i < flow.stages.length; i++) {
 
 // getNextStageData will return the next stage data and display video
 function getNextStageData(nextStage) {
-  console.log("Next Stage ... ", nextStage);
+  // console.log("Next Stage ... ", nextStage);
   clearChat();
   removeBlurBackground();
   $("#playImg").hide();
