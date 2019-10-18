@@ -109,6 +109,11 @@ body {
   body {
     margin: 0;
   }
+.main_web_page {
+    overflow: auto;
+    max-height: 960px;
+    max-width: 540px;
+  }
   .main_web_page .header {
     left: 30px;
   }
