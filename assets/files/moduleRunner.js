@@ -434,16 +434,14 @@ function createUI(currentData) {
             createButtonURL(
               currentData.next.data[i].data,
               currentData.next.data[i].text
-            ) +
-            createSkip();
+            );
         } else if (currentData.next.data[i].type === "webView") {
           display =
             display +
             createButtonWebView(
               currentData.next.data[i].data,
               currentData.next.data[i].text
-            ) +
-            createSkip();
+            );
         }
       }
       // console.log(display);
