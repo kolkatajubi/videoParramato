@@ -124,13 +124,12 @@ body {
   }
 
   .main_web_page {
-    width: 90vw;
+    max-width: 90vw;
     overflow: none;
-    height: 93vh;
   }
 
   .main_web_page .header {
-    left: 30px;
+    left: 20px;
   }
 
   .main_web_page .confirm_btn {
