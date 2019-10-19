@@ -137,7 +137,6 @@ body {
   }
 
   label {
-    position: absolute;
-    top: 5px;
+    margin-top: 10px;
   }
 }
