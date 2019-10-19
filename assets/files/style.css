@@ -135,4 +135,8 @@ body {
   .main_web_page .confirm_btn {
     left: 30%;
   }
+
+  label {
+    margin-top: 5px;
+  }
 }
