@@ -454,7 +454,8 @@ function createUI(currentData) {
       <div class="owl-carousel">`;
       display = display + createGeneric(currentData.next.data);
       display = `</div></div>`;
-      // console.log(display);
+      console.log("display......==>");
+      console.log(display);
       break;
     default:
       // console.log("Not a type");
@@ -545,8 +546,8 @@ function createText(pattern) {
 }
 
 function createGeneric(data) {
-  // console.log("Create Carousel");
-  // console.log("data", data);
+  console.log("Create Carousel");
+  console.log("data", data);
   var carousel = "";
   for (i in data) {
     // console.log("Carousel -> Next -> Data[]", i);
@@ -563,6 +564,7 @@ function createGeneric(data) {
       `</div>`;
     carousel = carousel + value;
   }
+  console.log("carousel........=> ", carousel);
   return carousel;
 }
 
