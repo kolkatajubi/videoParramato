@@ -152,28 +152,30 @@ var flow = {
       next: {
         data: [
           {
-            image: "image_link_of_the_carousel",
-            title: "title_of_the_carousel",
-            text: "sub_text_of_carousel",
+            image:
+              "https://pixie.jubi.ai/videoParramato/static/files/image.jpg",
+            title: "Carousel - 1",
+            text: "sub text for carousel 1",
             buttons: [
               {
-                text: "button_text_to_be_shown",
-                data: "button_data_payoad"
+                text: "Button 1",
+                data: "button_1"
               },
               {
-                text: "button_text_to_be_shown",
-                data: "button_data_payoad"
+                text: "Button 2",
+                data: "button_2"
               }
             ]
           },
           {
-            image: "image_link_of_the_carousel",
-            title: "title_of_the_carousel",
-            text: "sub_text_of_carousel",
+            image:
+              "https://pixie.jubi.ai/videoParramato/static/files/image.jpg",
+            title: "Carousel - 2",
+            text: "sub text for carousel 2",
             buttons: [
               {
-                text: "button_text_to_be_shown",
-                data: "button_data_payoad"
+                text: "Button",
+                data: "button"
               }
             ]
           }
@@ -448,7 +450,10 @@ function createUI(currentData) {
       break;
     case "generic":
       // console.log("generic");
+      display = `<div class="carousel-wrap">
+      <div class="owl-carousel">`;
       display = display + createGeneric(currentData.next.data);
+      display = `</div></div>`;
       // console.log(display);
       break;
     default:
@@ -546,13 +551,14 @@ function createGeneric(data) {
   for (i in data) {
     // console.log("Carousel -> Next -> Data[]", i);
     var value =
-      `<div class="generic"><h3>` +
+      `<div class="item">
+      <h3>` +
       data[i].title +
       `</h3><img src='` +
       data[i].image +
-      `' /><div class="genericText">` +
+      `' /><h5>` +
       data[i].text +
-      `</div>` +
+      `</h5>` +
       carouselButtons(data[i].buttons) +
       `</div>`;
     carousel = carousel + value;
