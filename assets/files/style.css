@@ -130,6 +130,7 @@ body {
 
   .main_web_page .header {
     left: 20px;
+    font-size: 20px;
   }
 
   .main_web_page .confirm_btn {
@@ -140,7 +141,6 @@ body {
     left: 1px;
     width: 90%;
     border: none;
-    border-bottom: 1px solid black;
     outline: none;
   }
 }
