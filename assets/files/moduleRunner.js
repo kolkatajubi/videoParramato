@@ -102,11 +102,11 @@ var flow = {
             type: "url",
             data: "https://www.bajajfinservmarkets.in/cust/#/?product=NPS",
             text: "Invest in NPS"
+          },
+          {
+            data: "Skip",
+            text: "Skip"
           }
-          // {
-          //   data: "Skip",
-          //   text: "Skip"
-          // }
         ]
       }
     },
@@ -123,11 +123,11 @@ var flow = {
             type: "webView",
             data: "https://pixie.jubi.ai/videoParramato/webview",
             text: "Invest in NPS"
+          },
+          {
+            data: "Skip",
+            text: "Skip"
           }
-          // {
-          //   data: "Skip",
-          //   text: "Skip"
-          // }
         ]
       }
     },
@@ -492,7 +492,7 @@ function createButtonURL(data, text) {
   return (
     `<button class ='response-button' onclick='window.open("` +
     data +
-    `"); showSkip();'>` +
+    `");'>` +
     text +
     "</button>"
   );
@@ -503,11 +503,11 @@ function createButtonWebView(data, text) {
   // console.log("data", data);
   // console.log("text", text);
   return (
-    `<iframe class='response-webview' src='` +
+    `<button class='response-button' onclick='$("iframe").show();this.hide();'>WebView</button><iframe class='response-webview' src='` +
     data +
-    `' onclick='getNextStageData();' >` +
+    `' onclick='getNextStageData();' style='display:none;'>` +
     text +
-    `</iframe><script>showSkip();</script>`
+    `</iframe>`
   );
   // return (
   //   `<iframe class='video' src='` +
@@ -518,13 +518,13 @@ function createButtonWebView(data, text) {
   // );
 }
 
-function createSkip() {
-  return `<button class ='skip' value='skip' onclick='getNextStageData();' style='display:none;'>Skip</button>`;
-}
+// function createSkip() {
+//   return `<button class ='skip' value='skip' onclick='getNextStageData();' style='display:none;'>Skip</button>`;
+// }
 
-function showSkip() {
-  $(".skip").show();
-}
+// function showSkip() {
+//   $(".skip").show();
+// }
 
 function createText(pattern) {
   // console.log("Create Text");
