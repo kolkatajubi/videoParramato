@@ -270,6 +270,19 @@ $(document).ready(() => {
   })();
 });
 
+function documentReady() {
+  $(".display").append(`<div class="video">
+  <video id="myVideo" onclick="playPause();">
+  </video>
+</div>
+<img
+  src="https://pixie.jubi.ai/videoParramato/static/css/play.png"
+  id="playImg"
+  onclick="playPause();"
+/>
+<div class="chat"></div>`);
+}
+
 function removeBlurBackground() {
   document.getElementById("myVideo").style.filter = "blur(0px)";
 }
