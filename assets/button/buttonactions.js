@@ -14,15 +14,22 @@ function playPause() {
   // FS();
   // console.log("play called fullscreen...");
   if (myVideo.paused) {
-    $("#playImg").hide();
     removeBlurBackground();
     myVideo.play();
     // document.getElementById("playpause").innerHTML = "PAUSE";
   } else {
     myVideo.pause();
-    $("#playImg").show();
+    blurBackground();
     // document.getElementById("playpause").innerHTML = "PLAY";
   }
+}
+
+function removeBlurBackground() {
+  document.getElementById("myVideo").style.filter = "blur(0px)";
+}
+
+function blurBackground() {
+  document.getElementById("myVideo").style.filter = "blur(10px)";
 }
 
 function exitHandler(document) {
