@@ -68,7 +68,12 @@ body {
   outline: none;
 }
 
-.response-button:hover {
+.send:active {
+  background-color: #72c975;
+}
+
+.response-button:hover,
+.send:hover {
   background-color: #4caf50;
   color: white;
   cursor: pointer;
