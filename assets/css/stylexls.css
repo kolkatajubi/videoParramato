@@ -51,7 +51,7 @@ body {
   z-index: 1;
 }
 
-button {
+.response-button {
   background: white;
   font-weight: 800;
   margin: 5px 15px;
@@ -61,12 +61,12 @@ button {
   border: none;
 }
 
-button:focus,
-button:active {
+.response-button:focus,
+.response-button:active {
   outline: none;
 }
 
-button:hover {
+.response-button:hover {
   background-color: #4caf50;
   color: white;
   cursor: pointer;
