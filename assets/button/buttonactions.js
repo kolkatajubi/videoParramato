@@ -1,4 +1,4 @@
-var fulscreen = 0;
+var fullscreen = 0;
 function FS() {
   // console.log("fullscreen called...", fullscreen);
   if (fullscreen == 0) {
