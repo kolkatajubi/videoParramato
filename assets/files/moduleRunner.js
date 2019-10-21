@@ -202,12 +202,16 @@ var fullscreen = 0; // Tracks if the view is fullscreen or not
 
 //======================================================================================
 restructureData();
+
 $(document).ready(() => {
+  documentReady();
+
   document.getElementById("stylesheet").href = theme[flow.theme];
   document.addEventListener("fullscreenchange", exitHandler);
   document.addEventListener("webkitfullscreenchange", exitHandler);
   document.addEventListener("mozfullscreenchange", exitHandler);
   document.addEventListener("MSFullscreenChange", exitHandler);
+
   exitHandler(document);
 
   getNextStageData();
