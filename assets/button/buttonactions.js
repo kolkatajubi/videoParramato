@@ -37,7 +37,6 @@ function FS() {
       document.body.webkitRequestFullscreen();
     else if (document.body.msRequestFullscreen)
       document.body.msRequestFullscreen();
-    fullscreen = 1;
 
     console.log("fullscreen = ", fullscreen);
     // document.getElementById("fs").innerHTML = "EXIT FULLSCREEN";
