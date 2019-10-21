@@ -268,7 +268,7 @@ function blurBackground() {
 }
 
 function playPause() {
-  FS();
+  // FS();
   // console.log("play called fullscreen...");
   if (myVideo.paused) {
     $("#playImg").hide();
@@ -282,44 +282,44 @@ function playPause() {
   }
 }
 
-function FS() {
-  // console.log("fullscreen called...", fullscreen);
-  if (fullscreen == 0) {
-    if (document.body.requestFullscreen) document.body.requestFullscreen();
-    else if (document.body.mozRequestFullScreen)
-      document.body.mozrequestFullscreen();
-    else if (document.body.webkitRequestFullscreen)
-      document.body.webkitRequestFullscreen();
-    else if (document.body.msRequestFullscreen)
-      document.body.msRequestFullscreen();
-    fullscreen = 1;
-    // document.getElementById("fs").innerHTML = "EXIT FULLSCREEN";
-    $(".display")
-      .width("100%")
-      .height("100%");
-  }
-}
+// function FS() {
+//   // console.log("fullscreen called...", fullscreen);
+//   if (fullscreen == 0) {
+//     if (document.body.requestFullscreen) document.body.requestFullscreen();
+//     else if (document.body.mozRequestFullScreen)
+//       document.body.mozrequestFullscreen();
+//     else if (document.body.webkitRequestFullscreen)
+//       document.body.webkitRequestFullscreen();
+//     else if (document.body.msRequestFullscreen)
+//       document.body.msRequestFullscreen();
+//     fullscreen = 1;
+//     // document.getElementById("fs").innerHTML = "EXIT FULLSCREEN";
+//     $(".display")
+//       .width("100%")
+//       .height("100%");
+//   }
+// }
 
-function exitFS() {
-  // console.log("exit fullscreen called...", fullscreen);
-  if (fullscreen == 1) {
-    if (document.exitFullscreen) document.exitFullscreen();
-    else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
-    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-    else if (document.msExitFullscreen) document.msExitFullscreen();
-    fullscreen = 0;
-    // document.getElementById("fs").innerHTML = "FULLSCREEN";
-    $(".display")
-      .width(640)
-      .height(360);
-  }
-}
+// function exitFS() {
+//   // console.log("exit fullscreen called...", fullscreen);
+//   if (fullscreen == 1) {
+//     if (document.exitFullscreen) document.exitFullscreen();
+//     else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+//     else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+//     else if (document.msExitFullscreen) document.msExitFullscreen();
+//     fullscreen = 0;
+//     // document.getElementById("fs").innerHTML = "FULLSCREEN";
+//     $(".display")
+//       .width(640)
+//       .height(360);
+//   }
+// }
 
-function toggleFS() {
-  // console.log("toggle fullscreen called...", fullscreen);
-  if (fullscreen == 0) FS();
-  else exitFS();
-}
+// function toggleFS() {
+//   // console.log("toggle fullscreen called...", fullscreen);
+//   if (fullscreen == 0) FS();
+//   else exitFS();
+// }
 
 //======================================================================================
 
