@@ -201,74 +201,46 @@ var fullscreen = 0; // Tracks if the view is fullscreen or not
 // var videoData = {}; // Stores the base64 data of video
 
 //======================================================================================
-
+restructureData();
 $(document).ready(() => {
   document.getElementById("stylesheet").href = theme[flow.theme];
-  // console.log("document.ready...");
-
-  // $.ajax({
-  //   url: "https://pixie.jubi.ai/videoParramato/base64",
-  //   type: "get",
-  //   dataType: "json",
-  //   contentType: "application/json",
-  //   success: resp => {
-  //     console.log("Ajax Success !!");
-  //     base64loaded = resp.status;
-  //     videoData = videoData;
-  //   },
-  //   error: err => {
-  //     console.log("Error");
-  //   }
-  // });
-  // -----------------------------------------input onchange listener--------------------------------
-  // $(".response-text").addEventListener("change", function() {
-  //   console.log("validate name called ");
-  //   validate_name();
-  // });
-  // ------------------------------------------------------------------------------------------
-
   document.addEventListener("fullscreenchange", exitHandler);
   document.addEventListener("webkitfullscreenchange", exitHandler);
   document.addEventListener("mozfullscreenchange", exitHandler);
   document.addEventListener("MSFullscreenChange", exitHandler);
+  exitHandler(document);
 
-  function exitHandler() {
-    if (
-      !document.fullscreenElement &&
-      !document.webkitIsFullScreen &&
-      !document.mozFullScreen &&
-      !document.msFullscreenElement
-    ) {
-      fullscreen = 0;
-      // document.getElementById("fs").innerHTML = "FULLSCREEN";
-      $(".display")
-        .width(640)
-        .height(360);
-    }
-  }
+  getNextStageData();
 
-  (() => {
-    // getNextStageData("stageWV");
-
-    getNextStageData();
-
-    setInterval(() => {
-      // console.log("setInterval...");
-      var videoDuration = document
-        .getElementById("myVideo")
-        .duration.toFixed(2);
-      var videoTime = document.getElementById("myVideo").currentTime.toFixed(2);
-      // console.log(videoTime);
-      if (status == 0)
-        if (videoTime >= videoDuration - 0.5) {
-          status = 1;
-          // console.log("1secs left...");
-          createUI(currentData);
-        }
-      if (videoTime == videoDuration) blurBackground();
-    }, 100);
-  })();
+  setInterval(() => {
+    // console.log("setInterval...");
+    var videoDuration = document.getElementById("myVideo").duration.toFixed(2);
+    var videoTime = document.getElementById("myVideo").currentTime.toFixed(2);
+    // console.log(videoTime);
+    if (status == 0)
+      if (videoTime >= videoDuration - 0.5) {
+        status = 1;
+        // console.log("1secs left...");
+        createUI(currentData);
+      }
+    if (videoTime == videoDuration) blurBackground();
+  }, 100);
 });
+
+function exitHandler(document) {
+  if (
+    !document.fullscreenElement &&
+    !document.webkitIsFullScreen &&
+    !document.mozFullScreen &&
+    !document.msFullscreenElement
+  ) {
+    fullscreen = 0;
+    // document.getElementById("fs").innerHTML = "FULLSCREEN";
+    $(".display")
+      .width(640)
+      .height(360);
+  }
+}
 
 function removeBlurBackground() {
   document.getElementById("myVideo").style.filter = "blur(0px)";
@@ -335,11 +307,13 @@ function toggleFS() {
 //======================================================================================
 
 // Creating Flow JSON of key(stage name) - value(stage data) pair
-for (i = 0; i < flow.stages.length; i++) {
-  //   var key = flow.stages[i].stage;
-  //   var value = flow.stages[i];
-  //   data[key] = value;
-  flowJSON[flow.stages[i].stage] = flow.stages[i];
+function restructureData() {
+  for (i = 0; i < flow.stages.length; i++) {
+    //   var key = flow.stages[i].stage;
+    //   var value = flow.stages[i];
+    //   data[key] = value;
+    flowJSON[flow.stages[i].stage] = flow.stages[i];
+  }
 }
 
 // console.log(JSON.stringify(flowJSON, 0, 3));
