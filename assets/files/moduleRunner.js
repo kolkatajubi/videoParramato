@@ -9,39 +9,39 @@ var flow = {
       text: [
         "Choosing to insure is a great step indeed.😊 What can I assist you with specifically? "
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/age.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/start.mp4",
       type: "button",
-      stage: "age",
+      stage: "start",
       next: {
         data: [
           {
             data: "Health Insurance",
-            text: "Health Insurance🏥"
-          },
-          {
-            data: "ULIP",
-            text: " ULIP💸"
-          },
-          {
-            data: "Travel Insurance",
-            text: " Travel  Insurance ✈️"
-          },
-          {
-            data: "Cyber Insurance",
-            text: "Cyber Insurance💻"
-          },
-          {
-            data: " MotorInsurance",
-            text: " Motor Insurance 🚗"
-          },
-          {
-            data: " pocket",
-            text: " Sachet Insurance👝"
-          },
-          {
-            data: "offer",
-            text: " Group Term Life 🎁"
+            text: "OKAY Lets Continue"
           }
+          // {
+          //   data: "ULIP",
+          //   text: " ULIP💸"
+          // },
+          // {
+          //   data: "Travel Insurance",
+          //   text: " Travel  Insurance ✈️"
+          // },
+          // {
+          //   data: "Cyber Insurance",
+          //   text: "Cyber Insurance💻"
+          // },
+          // {
+          //   data: " MotorInsurance",
+          //   text: " Motor Insurance 🚗"
+          // },
+          // {
+          //   data: " pocket",
+          //   text: " Sachet Insurance👝"
+          // },
+          // {
+          //   data: "offer",
+          //   text: " Group Term Life 🎁"
+          // }
         ],
         expectation: {
           invalidMessage:
@@ -65,22 +65,26 @@ var flow = {
       text: [
         "Oh even I am happy to see you happy and will do my best to make you even more happy by solving your queries"
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/salary.mp4",
-      stage: "st_salary",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/name.mp4",
+      stage: "name",
       type: "text"
     },
     {
       text: [
         "Insurance is a contract, represented by a policy, in which an individual or entity receives financial protection or reimbursement against losses from an insurance company."
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/dependent.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/gender.mp4",
       type: "quickReply",
-      stage: "dependent",
+      stage: "gender",
       next: {
         data: [
           {
-            data: "Get Insurance",
-            text: "Get Insurance"
+            data: "MALE",
+            text: "MALE"
+          },
+          {
+            data: "FEMALE",
+            text: "FEMALE"
           }
         ]
       }
@@ -89,9 +93,9 @@ var flow = {
       text: [
         "Apart from the amount that you decide to invest, there are minimum charges to be paid when opening an account under National Pension Scheme. These include transaction charges, advisory charges and applicable GST. Do keep in mind that these charges are calculated basis the amount you invest. "
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/pooh.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/dependent.mp4",
       type: "button",
-      stage: "stageURL",
+      stage: "dependent",
       next: {
         data: [
           {
@@ -110,14 +114,14 @@ var flow = {
       text: [
         "Apart from the amount that you decide to invest, there are minimum charges to be paid when opening an account under National Pension Scheme. These include transaction charges, advisory charges and applicable GST. Do keep in mind that these charges are calculated basis the amount you invest. "
       ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/name.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/salary.mp4",
       type: "button",
-      stage: "stageWV",
+      stage: "salary",
       next: {
         data: [
           {
             type: "webView",
-            data: "https://www.youtube.com/embed/tscMSXk_jaQ",
+            data: "https://pixie.jubi.ai/videoParramato/webview",
             text: "Invest in NPS"
           },
           {
@@ -129,47 +133,49 @@ var flow = {
     },
     {
       text: [" What is the name of your Firm?(Eg: ABC Associates)"],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/end.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/expense.mp4",
       type: "text",
-      stage: "offName",
+      stage: "expense",
       next: {
         expectation: {
           invalidMessage: "",
           type: "regex",
-          val: "\\w+"
+          val: "^[\\d]+$"
         }
       }
     },
     {
       text: [" What is the name of your Firm?(Eg: ABC Associates)"],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/job.mp4",
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/end.mp4",
       type: "generic",
-      stage: "offNameGeneric",
+      stage: "end",
       next: {
         data: [
           {
-            image: "image_link_of_the_carousel",
-            title: "title_of_the_carousel",
-            text: "sub_text_of_carousel",
+            image:
+              "https://pixie.jubi.ai/videoParramato/static/files/image.jpg",
+            title: "Carousel - 1",
+            text: "sub text for carousel 1",
             buttons: [
               {
-                text: "button_text_to_be_shown",
-                data: "button_data_payoad"
+                text: "Button 1",
+                data: "button_1"
               },
               {
-                text: "button_text_to_be_shown",
-                data: "button_data_payoad"
+                text: "Button 2",
+                data: "button_2"
               }
             ]
           },
           {
-            image: "image_link_of_the_carousel",
-            title: "title_of_the_carousel",
-            text: "sub_text_of_carousel",
+            image:
+              "https://pixie.jubi.ai/videoParramato/static/files/image.jpg",
+            title: "Carousel - 2",
+            text: "sub text for carousel 2",
             buttons: [
               {
-                text: "button_text_to_be_shown",
-                data: "button_data_payoad"
+                text: "Button",
+                data: "button"
               }
             ]
           }
@@ -195,73 +201,78 @@ var fullscreen = 0; // Tracks if the view is fullscreen or not
 // var videoData = {}; // Stores the base64 data of video
 
 //======================================================================================
+restructureData();
 
 $(document).ready(() => {
+  documentReady();
+
   document.getElementById("stylesheet").href = theme[flow.theme];
-  console.log("document.ready...");
-
-  // $.ajax({
-  //   url: "https://pixie.jubi.ai/videoParramato/base64",
-  //   type: "get",
-  //   dataType: "json",
-  //   contentType: "application/json",
-  //   success: resp => {
-  //     console.log("Ajax Success !!");
-  //     base64loaded = resp.status;
-  //     videoData = videoData;
-  //   },
-  //   error: err => {
-  //     console.log("Error");
-  //   }
-  // });
-
   document.addEventListener("fullscreenchange", exitHandler);
   document.addEventListener("webkitfullscreenchange", exitHandler);
   document.addEventListener("mozfullscreenchange", exitHandler);
   document.addEventListener("MSFullscreenChange", exitHandler);
 
-  function exitHandler() {
-    if (
-      !document.fullscreenElement &&
-      !document.webkitIsFullScreen &&
-      !document.mozFullScreen &&
-      !document.msFullscreenElement
-    ) {
-      fullscreen = 0;
-      // document.getElementById("fs").innerHTML = "FULLSCREEN";
-      $(".display")
-        .width(640)
-        .height(360);
-    }
-  }
+  exitHandler(document);
 
-  (() => {
-    // getNextStageData("stageWV");
+  getNextStageData();
 
-    getNextStageData();
-
-    setInterval(() => {
-      console.log("setInterval...");
-      var videoDuration = document
-        .getElementById("myVideo")
-        .duration.toFixed(2);
-      var videoTime = document.getElementById("myVideo").currentTime.toFixed(2);
-      // console.log(videoTime);
-      if (status == 0)
-        if (videoTime >= videoDuration - 1.0) {
-          status = 1;
-          console.log("1secs left...");
-          createUI(currentData);
-        }
-    }, 100);
-  })();
+  setInterval(() => {
+    // console.log("setInterval...");
+    var videoDuration = document.getElementById("myVideo").duration.toFixed(2);
+    var videoTime = document.getElementById("myVideo").currentTime.toFixed(2);
+    // console.log(videoTime);
+    if (status == 0)
+      if (videoTime >= videoDuration - 0.5) {
+        status = 1;
+        // console.log("1secs left...");
+        createUI(currentData);
+      }
+    if (videoTime == videoDuration) blurBackground();
+  }, 100);
 });
 
+function exitHandler(document) {
+  if (
+    !document.fullscreenElement &&
+    !document.webkitIsFullScreen &&
+    !document.mozFullScreen &&
+    !document.msFullscreenElement
+  ) {
+    fullscreen = 0;
+    // document.getElementById("fs").innerHTML = "FULLSCREEN";
+    $(".display")
+      .width(640)
+      .height(360);
+  }
+}
+
+function documentReady() {
+  $(".display").append(`<div class="video">
+  <video id="myVideo" onclick="playPause();">
+  </video>
+</div>
+<img
+  src="https://pixie.jubi.ai/videoParramato/static/css/play.png"
+  id="playImg"
+  onclick="playPause();"
+/>
+<div class="chat"></div>`);
+}
+
+function removeBlurBackground() {
+  document.getElementById("myVideo").style.filter = "blur(0px)";
+}
+
+function blurBackground() {
+  document.getElementById("myVideo").style.filter = "blur(10px)";
+}
+
 function playPause() {
-  FS();
-  console.log("play called fullscreen...");
+  // FS();
+  // console.log("play called fullscreen...");
   if (myVideo.paused) {
     $("#playImg").hide();
+    removeBlurBackground();
     myVideo.play();
     // document.getElementById("playpause").innerHTML = "PAUSE";
   } else {
@@ -271,53 +282,55 @@ function playPause() {
   }
 }
 
-function FS() {
-  console.log("fullscreen called...", fullscreen);
-  if (fullscreen == 0) {
-    if (document.body.requestFullscreen) document.body.requestFullscreen();
-    else if (document.body.mozRequestFullScreen)
-      document.body.mozrequestFullscreen();
-    else if (document.body.webkitRequestFullscreen)
-      document.body.webkitRequestFullscreen();
-    else if (document.body.msRequestFullscreen)
-      document.body.msRequestFullscreen();
-    fullscreen = 1;
-    // document.getElementById("fs").innerHTML = "EXIT FULLSCREEN";
-    $(".display")
-      .width("100%")
-      .height("100%");
-  }
-}
+// function FS() {
+//   // console.log("fullscreen called...", fullscreen);
+//   if (fullscreen == 0) {
+//     if (document.body.requestFullscreen) document.body.requestFullscreen();
+//     else if (document.body.mozRequestFullScreen)
+//       document.body.mozrequestFullscreen();
+//     else if (document.body.webkitRequestFullscreen)
+//       document.body.webkitRequestFullscreen();
+//     else if (document.body.msRequestFullscreen)
+//       document.body.msRequestFullscreen();
+//     fullscreen = 1;
+//     // document.getElementById("fs").innerHTML = "EXIT FULLSCREEN";
+//     $(".display")
+//       .width("100%")
+//       .height("100%");
+//   }
+// }
 
-function exitFS() {
-  console.log("exit fullscreen called...", fullscreen);
-  if (fullscreen == 1) {
-    if (document.exitFullscreen) document.exitFullscreen();
-    else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
-    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-    else if (document.msExitFullscreen) document.msExitFullscreen();
-    fullscreen = 0;
-    // document.getElementById("fs").innerHTML = "FULLSCREEN";
-    $(".display")
-      .width(640)
-      .height(360);
-  }
-}
+// function exitFS() {
+//   // console.log("exit fullscreen called...", fullscreen);
+//   if (fullscreen == 1) {
+//     if (document.exitFullscreen) document.exitFullscreen();
+//     else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+//     else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+//     else if (document.msExitFullscreen) document.msExitFullscreen();
+//     fullscreen = 0;
+//     // document.getElementById("fs").innerHTML = "FULLSCREEN";
+//     $(".display")
+//       .width(640)
+//       .height(360);
+//   }
+// }
 
-function toggleFS() {
-  console.log("toggle fullscreen called...", fullscreen);
-  if (fullscreen == 0) FS();
-  else exitFS();
-}
+// function toggleFS() {
+//   // console.log("toggle fullscreen called...", fullscreen);
+//   if (fullscreen == 0) FS();
+//   else exitFS();
+// }
 
 //======================================================================================
 
 // Creating Flow JSON of key(stage name) - value(stage data) pair
-for (i = 0; i < flow.stages.length; i++) {
-  //   var key = flow.stages[i].stage;
-  //   var value = flow.stages[i];
-  //   data[key] = value;
-  flowJSON[flow.stages[i].stage] = flow.stages[i];
+function restructureData() {
+  for (i = 0; i < flow.stages.length; i++) {
+    //   var key = flow.stages[i].stage;
+    //   var value = flow.stages[i];
+    //   data[key] = value;
+    flowJSON[flow.stages[i].stage] = flow.stages[i];
+  }
 }
 
 // console.log(JSON.stringify(flowJSON, 0, 3));
@@ -328,19 +341,20 @@ for (i = 0; i < flow.stages.length; i++) {
 
 // getNextStageData will return the next stage data and display video
 function getNextStageData(nextStage) {
-  console.log("getNextStageData...");
+  // console.log("Next Stage ... ", nextStage);
   clearChat();
+  removeBlurBackground();
   $("#playImg").hide();
   status = 0;
   currentData = {}; // Stores current stage data
   display = ""; // HTML DOM elements to be displayed
   if (nextStage == undefined) {
     currentStageNum += 1;
-    console.log("currentStageNum : ", currentStageNum);
+    // console.log("currentStageNum : ", currentStageNum);
     currentData = flow.stages[currentStageNum];
     // console.log(JSON.stringify(currentData, 0, 3));
     // if (base64loaded == "not yet") {
-    console.log("Video Data from URL...");
+    // console.log("Video Data from URL...");
     videoDisplay(currentData.video);
     // } else {
     //   console.log("Video Data from base64...");
@@ -349,11 +363,11 @@ function getNextStageData(nextStage) {
     // createUI(currentData);
   } else {
     currentStageNum = Object.keys(flowJSON).indexOf(nextStage);
-    console.log("currentStageNum : ", currentStageNum);
+    // console.log("currentStageNum : ", currentStageNum);
     currentData = flowJSON[nextStage];
     // console.log(JSON.stringify(currentData, 0, 3));
     // if (base64loaded == "not yet") {
-    console.log("Video Data from URL...");
+    // console.log("Video Data from URL...");
     videoDisplay(currentData.video);
     // } else {
     //   console.log("Video Data from base64...");
@@ -364,38 +378,41 @@ function getNextStageData(nextStage) {
 }
 
 function videoDisplay(videoData) {
-  console.log("videoDisplay...");
-  console.log(videoData);
-  // if ($("#myVideo"))
+  // console.log("videoDisplay...");
+  // console.log(videoData);
   $("#myVideo").empty();
   $("#myVideo").append(
-    //   `<video
-    //   id="myVideo"
-    //   onclick="playPause();"
-    // >
     "<source id='start' type='video/mp4' src='" + videoData + "' />"
-    // </video>`
   );
-  console.log("<source id='start' type='video/mp4' src='" + videoData + "' />");
+  // console.log("<source id='start' type='video/mp4' src='" + videoData + "' />");
   // $("#myVideo").attr("poster", "");
   var video = document.getElementById("myVideo");
-  console.log(video);
+  // console.log(video);
   video.load();
   if (currentStageNum == 0) $("#playImg").show();
   else video.play();
 }
 
 function createUI(currentData) {
-  console.log("createUI...");
+  // console.log("createUI...");
   // console.log(currentData);
   switch (currentData.type) {
     case "text":
-      console.log("text");
-      display = display + createText();
+      // console.log("text");
+      if (
+        currentData.next &&
+        currentData.next.expectation &&
+        currentData.next.expectation.type == "regex"
+      ) {
+        display = display + createText(currentData.next.expectation.val);
+      } else {
+        display = display + createText();
+      }
+      // validateButton();
       break;
     case "button":
     case "quickReply":
-      console.log("button / QuickReply");
+      // console.log("button / QuickReply");
       for (i in currentData.next.data) {
         if (!currentData.next.data[i].type) {
           display =
@@ -420,15 +437,19 @@ function createUI(currentData) {
             );
         }
       }
-      console.log(display);
+      // console.log(display);
       break;
     case "generic":
-      console.log("generic");
+      // console.log("generic");
+      display = `<div class="carousel-wrap">
+      <div class="owl-carousel">`;
       display = display + createGeneric(currentData.next.data);
-      console.log(display);
+      display = display + `</div></div>`;
+      // console.log("display......==>");
+      // console.log(display);
       break;
     default:
-      console.log("Not a type");
+      // console.log("Not a type");
       break;
   }
 
@@ -437,17 +458,17 @@ function createUI(currentData) {
 }
 
 function displayChat(view) {
-  console.log("displayChat...");
+  // console.log("displayChat...");
   $(".chat").append(view);
 }
 
 function clearChat() {
-  console.log("clearChat...");
+  // console.log("clearChat...");
   $(".chat").empty();
 }
 
 function createButton(data, text) {
-  console.log("Create Button");
+  // console.log("Create Button");
   // console.log("data", data);
   // console.log("text", text);
   return (
@@ -460,59 +481,86 @@ function createButton(data, text) {
 }
 
 function createButtonURL(data, text) {
-  console.log("Create Button URL");
+  // console.log("Create Button URL");
   // console.log("data", data);
   // console.log("text", text);
   return (
-    `<button><a class ='response-button' href='` +
+    `<button class ='response-button' onclick='window.open("` +
     data +
-    `' onclick='getNextStageData();' >` +
+    `");'>` +
     text +
-    `</a></button>`
+    "</button>"
   );
 }
 
 function createButtonWebView(data, text) {
-  console.log("Create Button Web View");
+  // console.log("Create Button Web View");
   // console.log("data", data);
   // console.log("text", text);
   return (
-    `<iframe class='response-webview' src='` +
+    `<button class='response-button' onclick='$("iframe").show();$(this).hide();'>WebView</button><iframe class='response-webview' src='` +
     data +
-    `' onclick='getNextStageData();' >` +
+    `' onclick='getNextStageData();' style='display:none;'>` +
     text +
     `</iframe>`
   );
+  // return (
+  //   `<iframe class='video' src='` +
+  //   data +
+  //   `' onclick='getNextStageData();' >` +
+  //   text +
+  //   `</iframe><script>showSkip();</script>`
+  // );
 }
 
-function createText() {
-  console.log("Create Text Input");
-  return `<input class='response-text' type='text' placeholder='enter here ...' /> <button class='send' onclick='getNextStageData();'>Send</button>`;
+// function createSkip() {
+//   return `<button class ='skip' value='skip' onclick='getNextStageData();' style='display:none;'>Skip</button>`;
+// }
+
+// function showSkip() {
+//   $(".skip").show();
+// }
+
+function createText(pattern) {
+  // console.log("Create Text");
+  // console.log(pattern);
+  if (pattern == undefined) {
+    pattern = /.+/;
+  } else {
+    pattern = `/` + pattern + `/`;
+  }
+  return (
+    `<input id='name' class='response-text' type='text' onkeyup='validate(` +
+    pattern +
+    `);' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`
+  );
 }
 
 function createGeneric(data) {
-  console.log("Create Carousel");
+  // console.log("Create Carousel");
   // console.log("data", data);
   var carousel = "";
   for (i in data) {
     // console.log("Carousel -> Next -> Data[]", i);
     var value =
-      `<div class="generic"><h3>` +
+      `<div class="item">
+      <h3>` +
       data[i].title +
       `</h3><img src='` +
       data[i].image +
-      `' /><div class="genericText">` +
+      `' /><h5>` +
       data[i].text +
-      `</div>` +
+      `</h5>` +
       carouselButtons(data[i].buttons) +
       `</div>`;
     carousel = carousel + value;
   }
+  // console.log("carousel........=> ", carousel);
   return carousel;
 }
 
 function carouselButtons(buttons) {
-  console.log("Carousel Buttons");
+  // console.log("Carousel Buttons");
   var genericButtons = "";
   for (i in buttons) {
     // console.log("Carousel -> Next -> Data[] -> Buttons[]" + i);
@@ -523,9 +571,29 @@ function carouselButtons(buttons) {
 }
 
 function replayFlow() {
-  console.log("replayFlow()");
+  // console.log("replayFlow()");
   currentStageNum = -1;
   display =
     display +
     `<button class ='response-button' value='replay' onclick='getNextStageData();'>Replay</button>`;
+}
+
+function validate(pattern) {
+  //var pattern = /^[a-zA-Z]+$/;
+  // console.log("validate...");
+  // console.log(pattern);
+  var input = $(".response-text").val();
+  // console.log("response-text.val() = ", input);
+  if (input == "") {
+    $(".response-text").css("border-bottom", "2px solid #F90A0A");
+    $(".send").attr("disabled", true);
+  } else if (pattern.test(input) && input != "") {
+    // console.log("correct input...");
+    $(".send").attr("disabled", false);
+    $(".response-text").css("border-bottom", "2px solid #34F458");
+  } else {
+    // console.log("reject input...");
+    $(".send").attr("disabled", true);
+    $(".response-text").css("border-bottom", "2px solid #F90A0A");
+  }
 }

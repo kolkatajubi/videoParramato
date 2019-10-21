@@ -1,0 +1,993 @@
+    
+    /*=====================  js file import  ======================*/
+    document.writeln("<script type='text/javascript' src='https://www.fundzbot.com/socket.io/socket.io.js'></script>");
+
+    /*=====================  css file import  ======================*/
+    // var cssId = 'myCss'; 
+    // if (!document.getElementById(cssId)) 
+    // {
+    //     var head  = document.getElementsByTagName('head')[0];
+    //     var link  = document.createElement('link');
+    //     link.id   = cssId;
+    //     link.rel  = 'stylesheet';
+    //     link.type = 'text/css';
+    //     link.href = 'https://www.fundzbot.com/css/jubi-theme.css';
+    //     link.media = 'all';
+    //     head.appendChild(link);
+    // }
+(function(){
+  setTimeout(function(){
+    document.getElementById("jubi-bot").innerHTML+= '<section id="jubi-chatbot"><section class="sec_scroll2 sec_openview" id="mainSec" style="display:none">'+ 
+
+    //document.body.innerHTML+= '<section id="jubi-chatbot"><section class="sec_scroll2 sec_openview" id="mainSec" style="display:none">'+ 
+    '<section id="heading" class="sec_newHeader">'+
+    '<div class="titleheader">'+
+    '<h3><img src="https://www.fundzbot.com/images/logo.png" class="img-responsive">'+
+    '<span class="headOnline">&nbsp;</span> </h3>'+
+    '<p>Chat and Invest. Ask me anything</p>'+
+    '<section class="secHideChat" id="secHideChat">'+
+    '<img src="https://www.fundzbot.com/images/icon_close.png" class="img-responsive mobileClose">'+
+    '</section>'+
+      '</div>'+
+   '</section> '+
+    '<section class="sec_chatbody" id="data">'+
+    '<div class="bxChatbox bxChat chatWindow" id="buttonlock"></div>'+
+'</section>'+
+    '<section id="textInput" class="sec_newFooter" style="float:left;width:100%;">'+        
+         '<article class="artMenu">'+
+          '<article class="secMenucontent" id="secMenucontent" style="display: none;">'+
+              '<section class="sec_dropdown">'+
+                '<h3>Menu</h3>'+
+                 '<ul>'+
+                   '<li class="menu_val">Start over</li>'+
+                   '<li class="menu_val">Invest</li>'+
+                   '<li class="menu_val">Switch</li>'+
+                   '<li class="menu_val">Redeem</li>'+
+                   '<li class="menu_val">Get account statement</li>'+
+                   '<li class="menu_val">Transaction Details</li>'+
+                   '<li class="menu_val">Nach Mandate</li>'+
+                   '<li class="menu_val">Talk to Customer Care</li>'+
+                   '<li class="menu_val">Cancel conversation</li>'+
+                 '</ul>'+
+              '</section>'+
+              '<div class="trianglearrow">'+
+                  '<img src="https://www.fundzbot.com/images/triangledown.png" class="img-responsive">'+
+              '</div>'+
+          '</article>   '+
+           '<div class="iconMenu">'+
+              '<i class="fa fas fa-bars"></i> '+                    
+           '</div> '+                 
+       '</article>'+
+        '<div class="bxform">'+                  
+              '<div class="bxinput">'+
+                '<textarea id="answerBottom" placeholder="Type here..." style="resize:none;overflow:hidden;"></textarea>'+
+              '</div>'+
+               '<button id="bottomClick" type="submit" onclick="return false;">'+
+                '<img src="https://www.fundzbot.com/images/icon_send.png" id="graySend" class="img-responsive">'+
+                '<img src="https://www.fundzbot.com/images/iconRed_send.png" id="redSend" class="img-responsive" style="display:none">'+
+              '</button>'+
+        '</div>'+
+        '<div class="new_copyright" id="new_copyright">'+
+
+            '<div class="shareIcons">'+
+              '<h5>Share on: </h5>'+
+              '<ul>'+
+
+                '<li class="whatsappLi">'+
+'<a target="_blank" href="https://api.whatsapp.com/send?text=https://www.fundzbazar.com/">'+
+'<i class="fa fab fa-whatsapp" aria-hidden="true" title="Share on whatsapp"></i></a>'+
+                '</li>'+
+                '<li class="facebookLi">'+
+                  
+'<a href="http://www.facebook.com/share.php?u=https://www.fundzbazar.com/" onclick="return fbs_click()" target="_blank">'+
+'<i class="fa fab fa-facebook" title="Share on Facebook"></i></a>'+
+                '</li>'+
+                '<li class="twitterLi">'+
+'<a target="_blank"  href="https://twitter.com/intent/tweet?url=https://www.fundzbazar.com/">'+
+'<i class="fa fab fa-twitter" title="Share on Twitter"></i></a>'+
+               '</li>'+
+                '<li class="linkedinLi">'+
+'<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.fundzbazar.com/&title=TEST&summary=TEST&source=My Website Name" target="_new"> '+
+'<i class="fa fa-linkedin" title="Share on Linkedin" ></i></a>'+
+               '</li>'+
+              '</ul>'+
+            '</div>'+
+        '</div>'+
+    '</section>  '+
+'</section> '+
+     '<section class="secCloseMsg" id="secCloseMsg">'+
+      '<div class="btnClose">'+
+          '<i class="fa fa-times"></i>'+
+      '</div>'+
+      '<p>Hey, I am FUNDZBOT. Your anytime investment friend! Click below.</p>'+
+  '</section>  <section class="sec_closeview" id="secCloseview">'+
+   '<img src="https://www.fundzbot.com/images/closeIcon.png" id="closeImage" class="img-responsive">'+
+  '</section>'+  
+'</section>'+
+'</section>';
+var webId =  new IDGenerator().generate().toString();
+let init           
+testExp = new RegExp('Android|webOS|iPhone|iPad|' +
+   'BlackBerry|Windows Phone|'  +
+   'Opera Mini|IEMobile|Mobile' , 
+  'i');          
+if (testExp.test(navigator.userAgent)){
+    document.getElementById("heading").style.borderRadius="0px";    
+  document.getElementById("secCloseview").style.bottom="12px";      
+  document.getElementById("secCloseMsg").style.bottom="85px";     
+  document.getElementById("secCloseview").style.right="28px";      
+  document.getElementById("secCloseMsg").style.right="28px";   
+    document.getElementById("textInput").style.border="0px";       
+    document.getElementById("mainSec").style.bottom="0px";        
+    document.getElementById("mainSec").style.right="0px";    
+}      
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};   
+$(document).ready(function() {
+    const socket = io("https://www.fundzbot.com");
+  var delayMaster = 1000;
+  var msgIndex = 0;
+  var gender = null;
+  var profile=undefined;
+  var scrolled = 0;
+  var semaphoreForFirstChatLoad=true;
+  var lastConversationSemaphore=true;
+    var projectId="JUBI2prC24_PrudentProduction"
+  // var webId;
+  var userId = findGetParameter("userId");
+  if(!userId) {
+    webId =  new IDGenerator().generate().toString();
+  } else {
+    webId = userId;
+  }
+
+   $(".showmenubx").css("display","none");
+              $(".showMenu").click(function(){
+                  $(".showmenubx").toggle(400);
+              });
+       
+            $(".sec_closeview").click(function(){
+              if(!init){
+                boot();
+                init=true   
+              } 
+                $(".sec_closeview").hide(200);
+                $(".secCloseMsg").hide(200);
+                $(".sec_openview").show(200);
+                $("#textcenter").show(200);
+                $(".secHideChat").show(200);
+                setTimeout( scrollUp,300);
+            });          
+            $("#bottomClick").click(function(){
+              setTimeout(function(){  
+                 $('#answerBottom').val('').empty();
+              },500);
+            });
+            $("#answerBottom").on('keyup', function (e) {
+                if (e.keyCode == 13) {
+                   $('#answerBottom').val('').empty();
+                }
+            });
+
+          setTimeout(function(){      
+              if(!init){
+                boot();
+                init=true   
+              }  
+                // $(".sec_closeview").hide(200);
+                // $(".secCloseMsg").hide(200);
+                // $(".sec_openview").show(200);
+                // $("#textcenter").show(200);
+                // $(".secHideChat").show(200);
+          },20000);
+            $(".secHideChat").click(function(){
+                $(".sec_closeview").show(200);
+                $(".secCloseMsg").show(200);
+                $(".sec_openview").hide(200);
+        $("#textcenter").hide(200);
+                $(".secHideChat").hide(200);
+            });
+            $(".btnClose").click(function(){
+                $(".secCloseMsg").hide(200);
+            });   
+            $("#answerBottom").click(function(){
+                $("#graySend").hide();
+                $("#redSend").show();
+            });     
+            $("#redSend").click(function(){
+                $("#redSend").hide();
+                $("#graySend").show();
+            });          
+          $(".iconMenu").click(function(){            
+              $("#secMenucontent").toggle(150);
+          });
+          $("#secMenucontent").click(function(){            
+              $("#secMenucontent").hide(150);
+          });
+          $('.bxform').click(function(){                      
+              $("#secMenucontent").hide(150);
+          });
+      $(".bxChat").animate({ scrollTop: $(document).height() }, "slow");
+
+  console.log("userId" + userId + "webId"  + webId)
+  socket.on('chat message-'+projectId,postReply);
+  function sendMessage(data) {
+    
+    data["projectId"]=projectId; 
+        console.log(JSON.stringify(data,null,3))
+    socket.emit('chat message', JSON.stringify(data,null,3));
+  }
+  function findGetParameter(parameterName) {
+      var result = null,
+          tmp = [];
+      var items = location.search.substr(1).split("&");
+      for (var index = 0; index < items.length; index++) {
+          tmp = items[index].split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+      }
+      console.log("result" + result)
+      return result;
+  }
+
+  function postReply(data) {
+    var res=JSON.parse(data);
+    if(res.webId==webId){
+      // console.log("data"+data);
+      // console.log("webID"+webId);
+      $(".bxCheckOPtion").remove();
+      $(".bxCheckOPtionUrl").remove();
+      // $(".sec_slider").remove();
+          $(".answer").parent().parent().remove();
+      var answerType = res.answerType;
+      var count = res.botMessage.length
+      gender = res.gender;
+      profile=res.profile;          
+      var i = 0;
+      var incrementDelay = 0;
+      var totalDelay = 0;
+      var delayPop = delayMaster;
+      var sleepDelay = delayMaster*(3/4);
+      var delay = delayMaster*(1/10);
+      if(semaphoreForFirstChatLoad){
+        semaphoreForFirstChatLoad=false;
+      }
+      else{
+        if(!document.getElementById("bxloadgif")){
+          if(i==0){
+            scrollUp();
+          }
+          var loader = prepareChatBotLoader();
+          $(".bxChat").append(loader);          
+          scrollUp();
+        }
+      }
+      show_replies();
+      function show_replies() {
+        // console.log(res.botMessage)
+        setTimeout(function() {
+          if (res.botMessage[i].type == "text"&&res.botMessage[i].value!=="") {
+            let url=res.botMessage[i].value.match(/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})/);
+            // console.log(url)
+            if(url){
+              res.botMessage[i].value=res.botMessage[i].value.replaceAll(url[0],"<a target='_blank' href='"+url[0]+"'>"+url[0]+"</a>")
+            }
+            // console.log(res.botMessage[i].value)
+            // console.log(lastConversationSemaphore);
+            if (i==0&&lastConversationSemaphore) {
+              var chatBotReponse = prepareChatBotFirstReply(res.botMessage[i].value);
+            }
+            else {
+              var chatBotReponse = prepareChatBotReply(res.botMessage[i].value);
+            }
+            i++;
+          }
+          
+          else if (res.botMessage[i].type == "video") {
+            console.log(res.botMessage[i].type + res.botMessage[i].value + "****")
+            console.log(lastConversationSemaphore);
+            if (i==0&&lastConversationSemaphore) {
+
+              var chatBotReponse = '<iframe style="padding-left: 40px;width: 100%;height: 220px;" src="'+res.botMessage[i].value+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+              
+            }
+            else {
+              var chatBotReponse = '<iframe style="padding-left: 40px;width: 100%;height: 220px;" src="'+res.botMessage[i].value+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+            }
+            i++
+          }
+          else if (res.botMessage[i].type == "image") {
+            // console.log("image")
+            // console.log(lastConversationSemaphore);
+            // console.log(i)
+            if (i==0&&lastConversationSemaphore) {
+              var chatBotReponse = prepareChatBotFirstImageReply(res.botMessage[i].value);
+            }
+            else {
+              var chatBotReponse = prepareChatBotImageReply(res.botMessage[i].value);
+            }
+            i++;
+          }
+          else{
+            res.botMessage.splice(i, 1);
+          }
+
+          pushToChat(chatBotReponse);
+          $(".sec_slider").fadeOut(100);
+          // if(i==0){
+            scrollUp();
+          // }
+          function sleep(ms) {
+            var start = new Date().getTime();
+            var end = start;
+            while (end < start + ms) {
+              end = new Date().getTime();
+            }
+          }
+
+          function delayResponse() {
+            if (i < res.botMessage.length) {
+              sleep(sleepDelay);
+            }
+            if(i<res.botMessage.length-1&&!document.getElementById("bxloadgif")){
+              var loader = prepareChatBotLoader();
+              $(".bxChat").append(loader);
+            }
+
+            if (i == res.botMessage.length) {
+              lastConversationSemaphore=false;
+              if(res.options){
+                pushToChat(prepareUserInput(res.answerType, res.options));
+              }
+              
+              return false;
+            }
+            else {
+              show_replies();
+            }
+          }
+
+          delayResponse();
+        }, delayPop);
+      }
+      msgIndex++;
+    }
+  }
+  function boot() {
+    /**
+     * GET First welcome message and question
+     */
+    var ans = prepareJSONRequest('Get Started');
+    var loader = prepareChatBotLoader();
+    $(".bxChat").append(loader); 
+    sendMessage(ans);
+    scrollUp();
+  }
+  
+
+  function prepareUserInput(questionType, options) {
+    // if (questionType == 'text') {
+    //  if(profile){
+    //    return prepareTextInputProfileBox();
+    //  }
+    //  else if (gender&&gender == "male") {
+    //    return prepareTextInputMaleBox();
+    //  }
+    //  else if (gender&&gender  == "female") {
+    //    return prepareTextInputFemaleBox();
+    //  }
+    //  else {
+    //    return prepareTextInputBox();
+    //  }
+    // }
+    // else 
+    if (questionType == 'option') {
+      var str = optionStart();
+      for (var i=0; i < options.length; i++) {
+          str = str + "<li><a href='javascript:void(0);' data-id='"+options[i].text+"'  inner-id='"+options[i].data+"' class='question-options'>"+ options[i].text +"</a></li>";
+      }
+
+      str = str + optionEnd();
+      return str;
+    }
+    else if (questionType == 'persist-option') {
+      var str = optionPersistStart();
+      for (var i=0; i < options.length; i++) {
+        // console.log(options[i].type)
+        if(options[i].type=="url"){
+          str = str + "<li><a href='"+options[i].data+"' target='_blank' data-id='"+options[i].text+"'  inner-id='"+options[i].text+"' class='question-options-persist-url'>"+ options[i].text +"</a></li>";
+        
+        }
+        else{
+          str = str + "<li><a href='javascript:void(0);' data-id='"+options[i].text+"'  inner-id='"+options[i].data+"' class='question-options-persist'>"+ options[i].text +"</a></li>";
+        }
+      }
+
+      str = str + optionEnd();
+      return str;
+    }
+    else if(questionType="generic"){
+
+      // console.log("genericcccc")
+
+      var str = buildGeneric(options);
+      // console.log(str);
+      setTimeout(function(){slidebx();}, 0);
+      return str;
+    }
+  }
+
+  function slidebx(){
+      $('.bxslider').bxSlider({
+        minSlides: 1,
+        maxSlides: 2,
+        slideWidth: 260,       
+        slideMargin: 10,
+        captions: true,
+        infiniteLoop: false,
+        hideControlOnEnd: true
+      });
+      $('.bxslider').hide();
+      $('.bxslider').fadeIn(3000);
+   }
+   
+   $(".menu_val").click(function(e){
+    let answer=$(this).text()
+    if (answer.trim()!=""){
+      $("#redSend").hide();
+          $("#graySend").show();
+      lastConversationSemaphore=true;
+      $(".bxCheckOPtion").remove();
+      $(".bxCheckOPtionUrl").remove();
+      var str = null;
+      if(profile){
+        str = showProfileAnswer(answer);
+      }
+      else if (gender&&gender == "male") {
+        str = showMaleAnswer(answer);
+      }
+      else if (gender&&gender == "female") {
+        str = showFemaleAnswer(answer);
+      }
+      else {
+        str = showAnswer(answer);
+      }
+      scrollUp()
+      pushToChat(str);
+      var ans1 = prepareJSONRequest(answer);
+      sendMessage(ans1);
+    }
+   })
+
+  $("body").on('click', '.bxgetthefull', function(e) {
+      lastConversationSemaphore=true;
+      var inner = $(this).attr('inner-id');
+          var answer = $(this).attr('data-id');
+      $(".bxCheckOPtion").remove();
+      $(".answer").parent().parent().remove();
+
+      var str = null; 
+      if(profile){
+        str = showProfileAnswer(answer);
+
+      }
+      else if (gender&&gender  == "male") {
+        str = showMaleAnswer(answer);
+      }
+      else if (gender&&gender  == "female") {
+        str = showFemaleAnswer(answer);
+      }
+      else {
+        str = showAnswer(answer);
+      }
+      scrollUp()
+      pushToChat(str);
+      var ans1 = prepareJSONRequest(inner);
+      sendMessage(ans1);
+  });
+
+  $("body").on('click', '.question-options', function(e) {
+      lastConversationSemaphore=true;
+      var inner = $(this).attr('inner-id');
+          var answer = $(this).attr('data-id');
+      $(".bxCheckOPtion").remove();
+      $(".answer").parent().parent().remove();
+
+      var str = null; 
+      if(profile){
+        str = showProfileAnswer(answer);
+
+      }
+      else if (gender&&gender  == "male") {
+        str = showMaleAnswer(answer);
+      }
+      else if (gender&&gender  == "female") {
+        str = showFemaleAnswer(answer);
+      }
+      else {
+        str = showAnswer(answer);
+      }
+      scrollUp()
+      pushToChat(str);
+      var ans1 = prepareJSONRequest(inner);
+      sendMessage(ans1);
+  });
+  $("body").on('click', '.question-options-persist', function(e) {
+      lastConversationSemaphore=true;
+      var inner = $(this).attr('inner-id');
+          var answer = $(this).attr('data-id');
+      //$(".bxCheckOPtion").remove();
+      //$(".answer").parent().parent().remove();
+
+      var str = null; 
+      if(profile){
+        str = showProfileAnswer(answer);
+
+      }
+      else if (gender&&gender  == "male") {
+        str = showMaleAnswer(answer);
+      }
+      else if (gender&&gender  == "female") {
+        str = showFemaleAnswer(answer);
+      }
+      else {
+        str = showAnswer(answer);
+      }
+      scrollUp()
+      pushToChat(str);
+      var ans1 = prepareJSONRequest(inner);
+      sendMessage(ans1);
+  });
+
+  $('body').on('click', '#bottomClick',function(){
+    var answer = $("#answerBottom").val();    
+		answer = answer.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+		answer = answer.replace("<", "&lt;").replace(">", "&gt;");
+    if(answer!=""){
+      lastConversationSemaphore=true;
+      $("#answerBottom").val("");
+      $(".bxCheckOPtion").remove();
+      $(".bxCheckOPtionUrl").remove();
+      // $(".sec_slider").remove();
+      var str = null;
+      if(profile){
+        str = showProfileAnswer(answer);
+      }
+      else if (gender&&gender == "male") {
+        str = showMaleAnswer(answer);
+      }
+      else if (gender&&gender == "female") {
+        str = showFemaleAnswer(answer);
+      }
+      else {
+        str = showAnswer(answer);
+      }
+      scrollUp()
+      pushToChat(str);
+      var ans1 = prepareJSONRequest(answer);
+      sendMessage(ans1);
+    }
+  });
+
+
+  $("body").on('keypress', '#answerBottom', function(e) {
+    var answer = $("#answerBottom").val();
+		answer = answer.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+		answer = answer.replace("<", "&lt;").replace(">", "&gt;");
+    if (e.which == 13&&answer!="") {
+      $("#redSend").hide();
+          $("#graySend").show();
+      lastConversationSemaphore=true;
+      $("#answerBottom").val("");
+      $(".bxCheckOPtion").remove();
+      $(".bxCheckOPtionUrl").remove();
+      // $(".sec_slider").remove();
+      var str = null;
+      if(profile){
+        str = showProfileAnswer(answer);
+      }
+      else if (gender&&gender == "male") {
+        str = showMaleAnswer(answer);
+      }
+      else if (gender&&gender == "female") {
+        str = showFemaleAnswer(answer);
+      }
+      else {
+        str = showAnswer(answer);
+      }
+      scrollUp()
+      pushToChat(str);
+      var ans1 = prepareJSONRequest(answer);
+      sendMessage(ans1);
+    }
+    else{
+              $("#graySend").hide();
+              $("#redSend").show();
+    }
+  });
+  function removeLoadingRight() {
+    scrollUp()
+    $("#bxuserloadgif").remove();
+  }
+
+
+  function addLoadingRight() {
+    scrollUp()
+    $(".bxChat").append(`<div class="bxRightchat bxuser_question bxloadgif" id='bxuserloadgif'  style="visibility: visible;">
+                       <div class='innerloadgif innerloadgifright'>
+                                    <img src='https://www.fundzbot.com/https://www.fundzbot.com/images/loading.gif' />
+                     </div>
+                           <div class="clearfix"></div>
+                           <div class="rightUserimg">
+                                    <img src="https://www.fundzbot.com/images/rightUser.png" class="img-responsive">
+                           </div>
+                           <div class="clearfix"></div>
+                  </div>`);
+
+  }
+  function pushToChat(str) {
+    $("#bxloadgif").remove();
+    $(".bxChat").append(str);
+
+      
+    
+
+  }
+  
+
+  
+  $("#answerBottom").click(scrollUp);
+  
+  function scrollUp() {
+    $("#data").animate({scrollTop:$("#buttonlock").height()}, 'slow');
+    // $("html, body").animate({ scrollTop:$("#data").height()*1000 }, 1000);
+  }
+  
+
+  function prepareJSONRequest(answer,data) {
+    return {
+      "lastAnswer": answer, 
+      "webId":webId
+    };
+  }
+
+  function generateSessionId(x) {
+    var s = "";
+    var value=$("#fb-id").text();
+    if(!value||value==""){
+      while(s.length<x&&x>0){
+        var r = Math.random();
+        s+= (r<0.1?Math.floor(r*100):String.fromCharCode(Math.floor(r*26) + (r>0.5?97:65)));
+      }
+    }
+    else{
+      s=value;
+    }
+
+    return s;
+  }
+
+
+  function genericStart(){
+    return '<section class="sec_slider"><div class="bxslider">';
+                
+  }
+function replaceAll(str, find, replace) {
+  if(typeof str =="string"){
+      return str.replace(new RegExp(find, 'g'), replace);
+    }
+    return str;
+}
+  function buildGeneric(data){
+    let html='';
+    if(data&&data.length>0&&data[0].buttons&&data[0].buttons.length>0){
+      html = genericStart();
+      for(let i =0;i<data.length;i++){
+        html+='<div>';
+        if(data[i].image){
+          html+='<div class="slideImage"><img src="'+data[i].image+'"></div>';
+        }
+        html+='<div class="sliderContent">';
+        if(data[i].title){
+          html+='<h5> '+data[i].title+'</h5>'
+        }
+        if(data[i].text){
+          html+='<p>'+data[i].text+'</p>'
+        }
+        html+='</div><div class="bxslidebtn">';
+        for(let j=0;j<data[i].buttons.length;j++){
+          let options=data[i].buttons[j];
+          options.text=replaceAll(options.text,"'"," ")
+          options.text=replaceAll(options.text,'"'," ")
+          options.data=replaceAll(options.data,"'"," ")
+          options.data=replaceAll(options.data,'"'," ")
+          if(options.type=="url"){
+            html +="<a href='"+options.data+"' target='_blank' data-id='"+options.text+"'  inner-id='"+options.text+"' class='question-options-url'>"+ options.text +"</a> ";
+          }
+          else{
+            html+="<a href='javascript:void(0);' data-id='"+options.text+"'  inner-id='"+options.data+"' class='question-options'>"+ options.text +"</a> ";
+          }
+        }
+        html+='</div>';
+        html+='</div>';
+       
+      }
+
+      html+=genericEnd();
+    }
+    return html;
+  }
+
+
+
+  function genericEnd(){
+    return '</div></section> ';
+  }
+
+  function prepareChatBotReply(msg) {
+    // $('#answerBottom').val('').empty();
+    return "<div class='bxLeftchat ' style='visibility: visible;'>"+
+        "<div class='leftInput' >"+ 
+          "<p>"+msg+"</p>"+
+          "<div class='pointLeftchat'>"+
+            // "<img src='https://www.fundzbot.com/images/leftUserPoint.png' class='img-responsive'>"+
+          "</div>"+
+        "</div><div class='clearfix'></div>"+
+      "</div>";
+  }
+
+  function prepareChatBotFirstReply(msg) {
+    // $('#answerBottom').val('').empty();
+    return "<div class='bxLeftchat ' style='visibility: visible;'>"+
+        "<div class='leftUserimg'>"+
+          "<img src='https://www.fundzbot.com/images/leftUser.png' class='img-responsive'>"+
+        "</div>"+
+        "<div class='leftInput' >"+
+        "<div class='arrowLeftchat arrow-left'></div>"+
+          "<p>"+msg+"</p>"+
+          "<div class='pointLeftchat'>"+
+            // "<img src='https://www.fundzbot.com/images/leftUserPoint.png' class='img-responsive'>"+
+          "</div>"+
+        "</div><div class='clearfix'></div>"+
+       "</div>";
+  }
+
+  function prepareChatBotFirstImageReply(msg) {
+    // $('#answerBottom').val('').empty();
+    return "<div class='bxLeftchat ' style='visibility: visible; '>"+                 
+          "<div class='leftUserimg'>"+
+            "<img src='https://www.fundzbot.com/images/leftUser.png' class='img-responsive'>"+
+          "</div>"+
+          "<div class='leftInput'>"+
+        "<div class='arrowLeftchat arrow-left'></div>"+
+            "<div class='postImg'>"+
+              "<img src='"+msg+"' class='img-responsive'>"+
+            "</div>"+
+            "<div class='pointLeftchat'>"+
+              // "<img src='https://www.fundzbot.com/images/leftUserPoint.png' class='img-responsive'>"+
+            "</div>"+
+          "</div><div class='clearfix'></div>"+
+       "</div>";
+  }
+
+  function prepareChatBotImageReply(msg) {
+    // $('#answerBottom').val('').empty();
+    return "<div class='bxLeftchat ' style='visibility: visible;'>"+  
+          // "<div class='leftUserimg'>"+
+          //  "<img src='https://www.fundzbot.com/images/leftUser.png' class='img-responsive'>"+
+          // "</div>"+               
+          "<div class='leftInput'>"+
+            // "<div class='arrowLeftchat arrow-left'></div>"+
+            "<div class='postImg'>"+
+              "<img src='"+msg+"' class='img-responsive'>"+
+            "</div>"+
+            "<div class='pointLeftchat'>"+
+              // "<img src='https://www.fundzbot.com/images/leftUserPoint.png' class='img-responsive'>"+
+            "</div>"+
+          "</div><div class='clearfix'></div>"+
+       "</div>";
+  }
+
+  function prepareChatBotLoader() {
+    // $('#answerBottom').val('').empty();
+    // scrollUp();
+    return "<div id='bxloadgif' class='bxuser_question bxloadgif ' style='visibility: visible;'><div class='leftInputGif'><div class='leftUserimg'><img src='https://www.fundzbot.com/images/leftUser.png' class='img-responsive'></div><div class='innerloadgif'><img src='https://www.fundzbot.com/images/dots.gif' />"+
+                "</div></div></div>";
+  }
+
+  function prepareTextInputBox() {
+    return "<div class='anwser-div bxRightchat  '  style='visibility: visible; '>"+
+          "<div class='rightInput'>"+ 
+          "<div class='arrowRightchat arrow-right'></div>"+
+            "<input class='form-control input-lg answer' data-id='"+msgIndex.toString()+"'  autofocus='autofocus' type='text' placeholder='Type and hit enter'>" +
+             "<div class='pointRightchat'>"+
+              // "<img src='https://www.fundzbot.com/images/rightUserPoint.png' class='img-responsive'>"+
+            "</div>"+                        
+            "<div class='clearfix'></div>"+
+          "</div>"+
+           "<div class='rightUserimg'>"+
+             "<img src='https://www.fundzbot.com/images/rightUser.png' class='img-responsive'>"+
+           "</div>"+
+       "<div class='clearfix'></div>"+
+         "</div>";
+  }
+
+  function showAnswer(answer) {
+    return "<div class='bxRightchat '  style='visibility: visible;'>"+
+          "<div class='rightInput'>"+ 
+          "<div class='arrowRightchat arrow-right'></div>"+
+            "<p>"+answer+"</p>"+
+             "<div class='pointRightchat'>"+
+              // "<img src='https://www.fundzbot.com/images/rightUserPoint.png' class='img-responsive'>"+
+            "</div>"+
+            "<div class='clearfix'></div>"+
+          "</div>"+
+             "<div class='rightUserimg'>"+
+                 "<img src='https://www.fundzbot.com/images/rightUser.png' class='img-responsive'>"+
+             "</div>"+
+          "<div class='clearfix'></div>"+
+         "</div>";
+  }
+
+
+
+  
+
+  function showMaleAnswer(answer) {
+    return "<div class='bxRightchat '  style='visibility: visible; '>"+
+          "<div class='rightInput'>"+ 
+          "<div class='arrowRightchat arrow-right'></div>"+
+            "<p>"+answer+"</p>"+
+             "<div class='pointRightchat'>"+
+              // "<img src='https://www.fundzbot.com/images/rightUserPoint.png' class='img-responsive'>"+
+            "</div>"+
+            "<div class='clearfix'></div>"+
+          "</div>"+
+          "<div class='rightUserimg'>"+
+            "<img src='https://www.fundzbot.com/images/rightUser.png' class='img-responsive'>"+
+          "</div>"+
+          "<div class='clearfix'></div>"+
+         "</div>";
+  }
+
+  
+  
+
+  function showFemaleAnswer(answer) {
+
+    return "<div class='bxRightchat '  style='visibility: visible; '>"+
+          "<div class='rightInput'>"+ 
+          "<div class='arrowRightchat arrow-right'></div>"+
+            "<p>"+answer+"</p>"+
+             "<div class='pointRightchat'>"+
+              // "<img src='https://www.fundzbot.com/images/rightUserPoint.png' class='img-responsive'>"+
+            "</div>"+                        
+            "<div class='clearfix'></div>"+
+          "</div>"+
+          "<div class='rightUserimg'>"+
+            "<img src='https://www.fundzbot.com/images/rightUserFemale.png' class='img-responsive'>"+
+          "</div>"+
+          "<div class='clearfix'></div>"+
+         "</div>";
+  }
+
+  function optionStart() {
+    return "<div class='bxCheckOPtion ' style='visibility: visible; '>" +
+        "<ul style='id='options'>";
+  }
+
+  function optionPersistStart() {
+    return "<div class='bxCheckOPtionPersist ' style='visibility: visible; '>" +
+        "<ul style='id='options'>";
+  }
+  //function optionStartUrl() {
+  //  return "<div class='bxCheckOPtionUrl ' style='visibility: visible; '>" +
+  //      "<ul style='id='options'>";
+  //}
+
+  function optionEnd() {
+    return "</ul></div>";
+  }
+
+
+  
+
+  function showProfileAnswer(answer) {
+    return "<div class='bxRightchat '  style='visibility: visible;'>"+
+          "<div class='rightInput'>"+ 
+          "<div class='arrowRightchat arrow-right'></div>"+
+            "<p>"+answer+"</p>"+
+             "<div class='pointRightchat'>"+
+              // "<img src='https://www.fundzbot.com/images/rightUserPoint.png' class='img-responsive'>"+
+            "</div>"+
+            "<div class='clearfix'></div>"+
+          "</div>"+
+          "<div class='rightUserimg'>"+
+            "<img style='border-radius: 100px;' src='"+profile+"' class='img-responsive'>"+
+          "</div>"+
+          "<div class='clearfix'></div>"+
+         "</div>";
+  }
+
+
+  function prepareTextInputProfileBox() {
+    return "<div class='anwser-div bxRightchat  '  style='visibility: visible; '>"+
+          "<div class='rightInput'>"+ 
+          "<div class='arrowRightchat arrow-right'></div>"+
+            "<input class='form-control input-lg answer' data-id='"+msgIndex.toString()+"' autofocus='autofocus' type='text' placeholder='Type and hit enter'>" +
+             "<div class='pointRightchat'>"+
+              // "<img src='https://www.fundzbot.com/images/rightUserPoint.png' class='img-responsive'>"+
+            "</div>"+                        
+            "<div class='clearfix'></div>"+
+          "</div>"+
+          "<div class='rightUserimg'>"+
+            "<img style='border-radius: 100px;' src='"+profile+"' class='img-responsive'>"+
+          "</div>"+
+       "<div class='clearfix'></div>"+
+         "</div>";
+  }
+  function prepareTextInputMaleBox() {
+    return "<div class='anwser-div bxRightchat  '  style='visibility: visible; '>"+
+          "<div class='rightInput'>"+ 
+          "<div class='arrowRightchat arrow-right'></div>"+
+            "<input class='form-control input-lg answer' data-id='"+msgIndex.toString()+"' autofocus='autofocus' type='text' placeholder='Type and hit enter'>" +
+             "<div class='pointRightchat'>"+
+              // "<img src='https://www.fundzbot.com/images/rightUserPoint.png' class='img-responsive'>"+
+            "</div>"+                        
+            "<div class='clearfix'></div>"+
+          "</div>"+
+          "<div class='rightUserimg'>"+
+            "<img src='https://www.fundzbot.com/images/rightUser.png' class='img-responsive'>"+
+          "</div>"+
+       "<div class='clearfix'></div>"+
+         "</div>";
+  }
+  function prepareTextInputFemaleBox() {
+    return "<div class='anwser-div bxRightchat  '  style='visibility: visible; '>"+
+          "<div class='rightInput'>"+ 
+          "<div class='arrowRightchat arrow-right'></div>"+
+            "<input class='form-control input-lg answer' data-id='"+msgIndex.toString()+"'  autofocus='autofocus' type='text' placeholder='Type and hit enter'>" +
+             "<div class='pointRightchat'>"+
+              // "<img src='https://www.fundzbot.com/images/rightUserPoint.png' class='img-responsive'>"+
+            "</div>"+                        
+            "<div class='clearfix'></div>"+
+          "</div>"+
+          "<div class='rightUserimg'>"+
+            "<img src='https://www.fundzbot.com/images/rightUserFemale.png' class='img-responsive'>"+
+          "</div>"+
+       "<div class='clearfix'></div>"+
+         "</div>";
+  }
+
+
+
+});
+
+  function IDGenerator() {
+   
+     this.length = 8;
+     this.timestamp = +new Date;
+     
+     var _getRandomInt = function( min, max ) {
+      return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+     }
+     
+     this.generate = function() {
+       var ts = this.timestamp.toString();
+       var parts = ts.split( "" ).reverse();
+       var id = "";
+       
+       for( var i = 0; i < this.length; ++i ) {
+        var index = _getRandomInt( 0, parts.length - 1 );
+        id += parts[index];  
+       }
+       
+       return id;
+     }
+
+     
+   }
+},2000)
+})()
+function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}

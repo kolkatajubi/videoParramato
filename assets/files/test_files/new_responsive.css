@@ -1,0 +1,527 @@
+﻿.not_show {
+    display: none;
+}
+
+
+/*.inner-header-client-details::before {
+    content:"\f007";
+    font-family: FontAwesome;
+     background-color: #f68241;
+    border-radius: 50%;
+    color: #ffffff; 
+     margin-right: 10px;
+    padding: 7px 9px;
+}*/
+
+.txt_right {
+    text-align: right;
+}
+
+
+
+.amount-bx {
+    border: 3px solid #ffffff;
+    padding: 7px 0;
+}
+
+.col-md-14 {
+    display: inline-block;
+    padding: 0 10px;
+    width: 13.9%;
+    text-align: center;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media (min-width : 320px) and (max-width : 767px) {
+    .dialogRes {
+    width:90% !important;
+    margin-top: 55px !important;
+}
+    
+    .pop-up-img {
+    left: 0 !important;
+    position: absolute;
+    right: 0;
+    top: -40px;
+    margin: 0 auto;
+}
+    .txt_left {
+        text-align: left;
+    }
+
+    .txt_right {
+        text-align: right;
+    }
+
+    .txt_center {
+        text-align: center;
+    }
+
+    .txt_justify {
+        text-align: justify;
+    }
+
+    .font_size_24 {
+        font-size: 24px !important;
+    }
+
+    .font_size_16 {
+        font-size: 16px !important;
+    }
+
+    .font_size_18 {
+        font-size: 18px !important;
+    }
+
+    .hidden-md {
+        display: none !important;
+    }
+
+    .margin_tb_15 {
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .margin_b_30 {
+        margin-bottom: 30px !important;
+    }
+
+    .margin_tb_10 {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .margin_10 {
+        margin: 10px !important;
+    }
+
+    .margin_tb_10 {
+        margin: 20px 0 !important;
+    }
+
+    /*Signup.aspx*/
+    .no_padd {
+        padding: 0px !important;
+    }
+
+    .back-wrapper-signpge .mob-h2 {
+        font-size: 18px !important;
+    }
+
+    .back-wrapper-signpge .mob-h3 {
+        font-size: 16px !important;
+    }
+
+    .or2 {
+        order: 2;
+    }
+
+    .reorder {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vertocal-border {
+        display: none;
+    }
+
+    .pos_right_20 {
+        position: absolute;
+        right: 20%;
+    }
+
+    .width_100 {
+        width: 100%;
+    }
+
+    .align-center ul {
+        margin: 0px;
+        text-align: center;
+    }
+
+    .margin_b_30 {
+        margin-bottom: 30px !important;
+    }
+
+    .dis_block {
+        display: block;
+        width: 100%;
+    }
+
+    .col-md-14 {
+        display: block;
+        float: left;
+        width: 49%;
+    }
+
+    /*.gdlr-logo {
+        float: left !important;
+        text-align: center !important;
+        width: 50% !important;
+    }*/
+
+    /*.inner-header-wrapper-username {
+        float: right !important;
+        text-align: center !important;
+        width: 50% !important;
+    }*/
+    .inner-header-wrapper-username {
+        float: none !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .gbl-mrgn-btm-5 p {
+        height: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 10px 0;
+    }
+
+    .m_min_height_280 {
+        min-height: 280px !important;
+    }
+
+    .dash-nav-bar i {
+        color: #fff;
+        font-size: 14px !important;
+    }
+
+    .social-media-details1 li a {
+        margin: 0 7px !important;
+    }
+
+    .text_h5 h5 {
+        font-weight: 600 !important;
+        margin: 10px 0px !important;
+        color: #435469 !important;
+    }
+
+    .mo_display_center {
+        text-align: center !important;
+        display: block !important;
+    }
+
+    .not_show {
+        display: block !important;
+    }
+
+    .mo_not_show {
+        display: none !important;
+    }
+
+    .mo_no-floats {
+        float: none !important;
+        display: block !important;
+    }
+
+    .mo_max_width_500px {
+        width: 500px !important;
+    }
+
+    .marg_top_50 {
+        margin-top: 50px !important;
+    }
+
+    .marg_top_20 {
+        margin-top: 20px !important;
+    }
+
+    .nav_padd > li {
+        margin: 2px !important;
+    }
+
+    .nav_padd li a {
+        padding: 5px !important;
+        font-size: 13px !important;
+    }
+
+    .marg_tb_30 {
+        margin: 30px 0 !important;
+    }
+
+    .chiduafter_plus::after {
+        content: "\f068";
+        font-family: FontAwesome;
+        font-size: 15px;
+        font-weight: 500;
+        position: absolute;
+        right: auto;
+        top: 108px !important;
+    }
+
+    .chiduafter_equal::after {
+        content: "=";
+        font-family: FontAwesome;
+        font-size: 15px;
+        font-weight: 500;
+        position: absolute;
+        right: auto;
+        top: 108px !important;
+    }
+
+    .sip_after_plus::after {
+        content: "";
+        font-family: FontAwesome;
+        font-size: 15px;
+        font-weight: 500;
+        position: absolute;
+        right: auto !important;
+        top: 79px !important;
+    }
+
+    .sip_after_equal::after {
+        content: "=";
+        font-size: 26px;
+        font-weight: 700;
+        position: absolute;
+        right: auto;
+        top: 90px;
+    }
+
+    .step_after_plus::after {
+        content: "";
+        font-family: FontAwesome;
+        font-size: 15px;
+        font-weight: 500;
+        position: absolute;
+        right: auto !important;
+        top: 89px !important;
+    }
+
+    .step_after_equal::after {
+        content: "=";
+        font-size: 26px;
+        font-weight: 700;
+        position: absolute;
+        right: auto;
+        top: 99px;
+    }
+
+    .chimarg_plus::after {
+        content: "\f068";
+        font-family: FontAwesome;
+        font-size: 15px;
+        font-weight: 500;
+        position: absolute;
+        right: auto;
+        top: 110px;
+    }
+
+    .chimarg_equal::after {
+        content: "=";
+        font-size: 26px;
+        font-weight: 700;
+        position: absolute;
+        right: auto;
+        top: 101px;
+    }
+
+    .retir_plus::after {
+        content: "\f068";
+        font-family: FontAwesome;
+        font-size: 15px;
+        font-weight: 500;
+        position: absolute;
+        right: auto !important;
+        top: 109px !important;
+    }
+
+    .retir_equal::after {
+        content: "=";
+        font-size: 26px;
+        font-weight: 700;
+        position: absolute;
+        right: auto !important;
+        top: 101px !important;
+    }
+
+    .dravac_plus::after {
+        content: "\f068";
+        font-family: FontAwesome;
+        font-size: 15px;
+        font-weight: 500;
+        position: absolute;
+        right: auto;
+        top: 112px !important;
+    }
+
+    .dravac_equal::after {
+        content: "=";
+        font-size: 26px;
+        font-weight: 700;
+        position: absolute;
+        right: auto;
+        top: 100px !important;
+    }
+
+    .hous_plus::after {
+        content: "\f068";
+        font-family: FontAwesome;
+        font-size: 15px;
+        font-weight: 500;
+        position: absolute;
+        right: auto !important;
+        top: 109px !important;
+    }
+
+    .hous_equal::after {
+        content: "=";
+        font-size: 26px;
+        font-weight: 700;
+        position: absolute;
+        right: auto !important;
+        top: 100px !important;
+    }
+
+    .social-media-details1 li {
+        padding: 0px !important;
+    }
+
+    ul.custom-nav-tab {
+        float: none !important;
+        margin: -3px 7px 0 7px !important;
+    }
+}
+
+
+
+
+
+@media (min-width : 768px) and (max-width : 991px) {
+    .not_show {
+        display: none !important;
+    }
+
+    .tab-display {
+        display: block !important;
+    }
+
+    .col-md-14 {
+        display: inline-block;
+        padding: 0 10px;
+        width: 50%;
+        text-align: center;
+    }
+
+    .amount-bx h2 {
+        font-size: 18px;
+    }
+
+    .res-bx-rd h2 {
+        font-size: 20px;
+    }
+
+    .gdlr-logo {
+        text-align: left !important;
+    }
+
+    .cal-res-txt > p {
+        height: 38px;
+    }
+
+    .after_plus::after {
+        content: "";
+        font-family: FontAwesome;
+        font-size: 15px;
+        font-weight: 500;
+        position: absolute;
+        right: -6px;
+        top: 59px;
+    }
+
+    .after_equal::after {
+        top: 51px;
+    }
+
+    .custom-calc-h2tg h2 {
+        margin-bottom: 10px;
+        margin-top: 44px;
+    }
+
+    .mo_no-floats {
+        float: none !important;
+        display: block !important;
+    }
+
+    ul.tabs li a, ul.tabs li.selected a, ul.tabs li.selected a:hover {
+        width: 100%;
+        position: static;
+    }
+
+    .mo_max_width_500px {
+        width: 500px !important;
+    }
+
+    .marg_top_50 {
+        margin-top: 50px !important;
+    }
+
+    .height-100px {
+        height: 103px;
+    }
+
+        .height-100px .amt {
+            height: 28px;
+        }
+
+    .no-floats {
+        float: none !important;
+        text-align: left !important;
+    }
+
+    .hdn-responsive-heding {
+        display: block !important;
+    }
+
+    .height-left {
+        height: 108px !important;
+        margin: 10px 0 !important;
+        text-align: left !important;
+    }
+
+    .display {
+        display: block !important;
+        margin: 10px 0px !important;
+    }
+
+    .make-investment-responsive-blok {
+        display: none;
+    }
+
+    .android-mbl {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .play-store > img {
+        width: 100px !important;
+    }
+
+    .sign-up-box h2 {
+        font-size: 22px;
+    }
+
+    .dis-block ul.tabs li {
+        display: block;
+        margin: 0 3px 0 0;
+    }
+
+    .respnsv-mrgn-btm {
+        border-bottom: 1px solid #e2e2e2 !important;
+        padding: 10px 0;
+    }
+
+    .margin-top-14per {
+        margin-top: 14%;
+    }
+
+    .tabs-nav li a {
+        position: static !important;
+    }
+}
+
+
+@media (min-device-width : 992px) and (max-device-width : 1200px) {
+}

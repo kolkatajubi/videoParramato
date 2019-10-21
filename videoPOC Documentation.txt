@@ -1,0 +1,184 @@
+	********************************* FILES Structure ************************************
+	
+	videoParramato:	
+	server.js -> node module to host files from the server
+		asset:
+			css:
+				sylexls.css		-> light theme css for flow
+				styledark.css	-> dark theme css for flow
+			files:
+				moduleRunner.js	-> main javascript file which handles the flow and modifies the dom elements accordingly
+				index.html		-> main html for the front end view
+				webview.html	-> html for webview
+				style.css		-> css for webview
+			videos:
+				<contains videos>
+				
+				
+	Files for FrontEnd :
+		sylexls.css		
+		styledark.css
+		moduleRunner.js
+		index.html
+		webview.html
+		style.css
+		videos
+		
+				
+				
+	
+
+	****************************** JSON containing the flow data *************************
+	
+	The JSON will be parsed from the back end.
+		{
+		  _id: "5c83c5150fff5393bdc48b4b",
+		  flowId: "insurance",
+		  projectId: "finservVoiceUat_111217597624559107965",
+		  id: "finservVoiceUat_111217597624559107965-insurance",
+		  theme: "light",				-> sets the theme of the flow 
+		  voice: "female"				-> sets the voice of the video (only if the video has dual voice else the default voice)
+		  stages:[<This will contain flow data i.e the stages >],
+		  folder: "personalLoanLending"
+		};
+	
+	
+		
+	******************************  FUNCTIONS  **************************
+
+#	On full page Load :
+		* The setInterval() function is called.
+				+ This function runs on loop with an interval of 100ms.
+				+ This function triggers another function CreateUI() at the end of each Video.
+		* The getNextStage() function is called for first one time.
+		
+		
+#	getNextStage() :
+        * Updates the stage and calls VideoDisplay().
+		
+		
+#	videoDisplay(videoURL) :
+		* parameters :	videoUrl = takes video source URL
+		* This function appends, loads and plays the video from the source link.
+		
+
+#	createUI(currentStageData) :
+		* parameters : currentStageData = current stage Data in Json format.
+		* it takes an object as a parameter which contians the type of data to be created in the front end:
+			It calls the following functions respective to their types	: 	
+				+createText()			->for creating a text input field.
+				+createButtons()		->for creating a button element.
+				+createButtonURL()		->for creating a button element with URL.
+				+createButtonWebView()	->for creating a button element with WebView .
+				+createGeneric()		->for creating a carousel.
+			
+		* then, it calls displayChat()	for appending the above elements.
+		* also calls clearChat() to clear the previously appended elements before appending new elements.
+		* It also calls replayFlow() and the end of a particular Flow.
+		
+				
+#	displayChat(view) :
+		* parameters : view = HTML code is taken as a parameter to append in a particular HTML location
+		* It appends the HTML code in the frontend HTML which displays the following :
+				+buttons
+				+textfield
+				+webview
+				+carousel
+		all of the above elements will contain an onClick function which will redirect and call getNextStage() function.
+		
+
+#	createText(pattern) :
+		* parameters : pattern = regex that is to be validated.
+		* creates text input field with respective validation
+		* return data : returns <html code for creating input field>
+
+		
+#	createButton(data, text) :
+		* parameters :	data = data to be passed on clicking
+						text = text to be displayed on the button
+		* creates buttons
+		* return data : returns <html code for creating input field>
+			
+	
+#	createGeneric(data)
+		* parameters :	data = data in the form of JSON object containing carousel properties;
+		* creates the carousel with respect to its given properties.
+		* calls carouselButtons() function.
+		* return data: returns <html code for creating input field>
+			
+			
+#	carouselButtons(buttons)
+		* parameters :	buttons = data in the form of JSON object containing carousel properties.
+		* creates the carousel Button along with the properties.
+		* calls createButtons() function.
+		* return data: returns <html code for creating carousel Card>
+			
+
+#	replayFlow() :
+		*creates a replay button when called.
+		
+		
+#	validate(<regex>) :
+		* checks the regex and modifies the DOM elements accordingly.
+		* disables the button if regex is not matched.
+		* red border in the input field if regex is not matched.
+		
+		
+#	removeBlurBackground() :
+		* removes video blur effect.
+		
+		
+#	blurBackground() :
+		* adds video blur effect.
+		
+		
+# 	FS() :
+		* puts the video on fullscreen mode.
+		
+		
+#	exitFS() :
+		* exits the fullscreen mode.
+		
+		
+# 	toggleFS() :
+		* toggles between the fullscreen mode.
+  		
+		
+	**************************************************************************************
+	
+	
+	
+	
+	
+	********************************* GLOBAL VARIABLES ***********************************
+		
+		
+		------------------ DEFINES THE THEME OF THE FLOW --------------------------
+		var theme = {
+			default: "",
+			  dark: "https://pixie.jubi.ai/videoParramato/static/css/styledark.css",
+			  light: "https://pixie.jubi.ai/videoParramato/static/css/stylexls.css"
+		};
+
+		----------------------------- VARIABLES -----------------------------------
+		var currentStageNum;	-> Stores current stage number
+		var flowJSON = {}; 		-> Stores flow key(stage name) - value(stage data) pair
+		var currentData = {}; 	-> Stores current stage data
+		var display = ""; 		-> HTML DOM elements to be displayed
+		var status = 0; 		-> Tracks if (button) is displayed or not
+		var fullscreen = 0; 	-> Tracks if the view is fullscreen or not
+		
+	**************************************************************************************
+	
+	
+	
+	
+	******************************** DATA FLOW DIGRAM *************************************
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,1 @@
+﻿window.fbAsyncInit = function () { FB.init({ appId: "1661651444161049", status: !0, cookie: !0, xfbml: !0 }) }, function () { var n = document.createElement("script"); n.async = !0, n.src = document.location.protocol + "//connect.facebook.net/en_US/all.js", document.getElementById("fb-root").appendChild(n) }();
