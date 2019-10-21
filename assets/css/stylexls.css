@@ -65,7 +65,6 @@ body {
 
 .response-button:focus,
 .send:focus,
-.send:active,
 .response-button:active {
   outline: none;
 }
