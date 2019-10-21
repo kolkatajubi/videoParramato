@@ -11,6 +11,7 @@ $(document).ready(() => {
 });
 
 function exitHandler(document) {
+  console.log("exit handler...");
   if (
     !document.fullscreenElement &&
     !document.webkitIsFullScreen &&
@@ -18,6 +19,7 @@ function exitHandler(document) {
     !document.msFullscreenElement
   ) {
     fullscreen = 0;
+    console.log("fullscreen = ", fullscreen);
     // document.getElementById("fs").innerHTML = "FULLSCREEN";
     // $(".display")
     //   .width(640)
@@ -26,7 +28,7 @@ function exitHandler(document) {
 }
 
 function FS() {
-  // console.log("fullscreen called...", fullscreen);
+  console.log("fullscreen called...FS");
   if (fullscreen == 0) {
     if (document.body.requestFullscreen) document.body.requestFullscreen();
     else if (document.body.mozRequestFullScreen)
@@ -36,6 +38,8 @@ function FS() {
     else if (document.body.msRequestFullscreen)
       document.body.msRequestFullscreen();
     fullscreen = 1;
+
+    console.log("fullscreen = ", fullscreen);
     // document.getElementById("fs").innerHTML = "EXIT FULLSCREEN";
     $(".display")
       .width("100%")
