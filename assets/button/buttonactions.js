@@ -1,4 +1,30 @@
 var fullscreen = 0;
+
+$(document).ready(() => {
+  document.getElementById("stylesheet").href = theme[flow.theme];
+  document.addEventListener("fullscreenchange", exitHandler);
+  document.addEventListener("webkitfullscreenchange", exitHandler);
+  document.addEventListener("mozfullscreenchange", exitHandler);
+  document.addEventListener("MSFullscreenChange", exitHandler);
+
+  exitHandler(document);
+});
+
+function exitHandler(document) {
+  if (
+    !document.fullscreenElement &&
+    !document.webkitIsFullScreen &&
+    !document.mozFullScreen &&
+    !document.msFullscreenElement
+  ) {
+    fullscreen = 0;
+    // document.getElementById("fs").innerHTML = "FULLSCREEN";
+    $(".display")
+      .width(640)
+      .height(360);
+  }
+}
+
 function FS() {
   // console.log("fullscreen called...", fullscreen);
   if (fullscreen == 0) {
