@@ -19,9 +19,9 @@ function exitHandler(document) {
   ) {
     fullscreen = 0;
     // document.getElementById("fs").innerHTML = "FULLSCREEN";
-    $(".display")
-      .width(640)
-      .height(360);
+    // $(".display")
+    //   .width(640)
+    //   .height(360);
   }
 }
 
