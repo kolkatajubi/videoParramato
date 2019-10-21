@@ -1759,7 +1759,7 @@ function __doPostBack(eventTarget, eventArgument) {
 <p>
   <strong>What is asset allocation? </strong>
   <div class="display" style="display:none;"></div>
-  <button style="padding: 2px 16px;border-radius: 9px;" onclick="$(this).hide();$('.display').show();">CLICK ME !</button>
+  <button style="padding: 2px 16px;border-radius: 9px;" onclick=" event.preventDefault();$(this).hide();$('.display').show();">CLICK ME !</button>
 </p>
 <p>
 	Asset allocation is an investment strategy dividing an investment portfolio among different asset classes, such as stocks, bonds, and cash.</p>
