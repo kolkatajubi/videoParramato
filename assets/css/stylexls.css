@@ -51,7 +51,8 @@ body {
   z-index: 1;
 }
 
-.response-button {
+.response-button,
+.send {
   background: white;
   font-weight: 800;
   margin: 5px 15px;
@@ -59,14 +60,18 @@ body {
   border-radius: 16px;
   cursor: pointer;
   border: none;
+  height: auto;
 }
 
 .response-button:focus,
+.send:focus,
+.send:active,
 .response-button:active {
   outline: none;
 }
 
-.response-button:hover {
+.response-button:hover,
+.send {
   background-color: #4caf50;
   color: white;
   cursor: pointer;

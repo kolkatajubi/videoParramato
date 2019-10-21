@@ -52,7 +52,7 @@ img {
   width: 170px;
 }
 
-button {
+.btn_carousel {
   border-radius: 5px;
   border: none;
   margin-bottom: 10px;
