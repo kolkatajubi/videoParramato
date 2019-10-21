@@ -10,6 +10,21 @@ $(document).ready(() => {
   exitHandler(document);
 });
 
+function playPause() {
+  // FS();
+  // console.log("play called fullscreen...");
+  if (myVideo.paused) {
+    $("#playImg").hide();
+    removeBlurBackground();
+    myVideo.play();
+    // document.getElementById("playpause").innerHTML = "PAUSE";
+  } else {
+    myVideo.pause();
+    $("#playImg").show();
+    // document.getElementById("playpause").innerHTML = "PLAY";
+  }
+}
+
 function exitHandler(document) {
   console.log("exit handler...");
   if (
