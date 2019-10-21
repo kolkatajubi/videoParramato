@@ -20,14 +20,14 @@
     <title>Document</title>
   </head>
 
-  <body onload="init();">
+  <body>
     <div class="display">
       <video id="myVideo" onclick="playPause();">
         <source src="start.mp4" type="video/mp4" />
       </video>
 
       <div class="container">
-        <button type="submit" touchstart="start(event)" touchend="end(event)">
+        <button type="submit" onclick="clickThis(this)">
           Click here
         </button>
       </div>

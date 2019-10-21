@@ -1,10 +1,10 @@
-function start(event) {
-  let padding = 20;
-  padding -= 2;
-  $(event.srcElement).css("padding", "10px " + padding + "px");
-}
-
-function end(event) {
-  let padding = 20;
-  $(event.srcElement).css("padding", "10px " + padding + "px");
+function clickThis(el) {
+  let width = $(el).width();
+  setInterval(() => {
+    if (width > 20) {
+      width -= 0.5;
+      $(el).html("i");
+      $(el).css("width", width + "px");
+    }
+  }, 5);
 }
