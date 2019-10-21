@@ -1,0 +1,158 @@
+
+
+<html>
+<head>
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+
+
+    <title>404 Page</title>
+
+    <style>
+        .logo {
+            border-bottom: 1px solid hsl(0, 0%, 80%);
+            padding: 24px 0 15px;
+        }
+
+            .logo img {
+                width: 220px;
+            }
+        /*404*/
+        .pge404 {
+            margin: 40px 0 0 0;
+        }
+
+        .text-center ul {
+            list-style: outside none none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .txt_404 {
+            color: #44576f;
+            font-family: opensans-bold_0;
+            font-size: 110px;
+            text-align: center;
+        }
+
+        .pge-nt-found {
+            color: #44576f;
+            font-family: opensans-bold_0;
+            font-size: 28px;
+        }
+        /*404*/
+        @font-face {
+            font-family: OpenSans-Regular_0;
+            src: url('fonts/OpenSans-Regular_0.ttf');
+        }
+
+        @font-face {
+            font-family: OpenSans-Bold_0;
+            src: url('fonts/OpenSans-Bold_0.ttf');
+        }
+
+        body {
+            font-family: OpenSans-Regular_0;
+        }
+
+        h2, h3, h4 {
+            margin: 0;
+        }
+
+        .logout-pge {
+            padding: 10px 0;
+            min-height: 500px;
+        }
+
+        .again-login-strip {
+            background-color: #44576f;
+            bottom: -10px;
+            color: #fff;
+            font-family: opensans-bold_0;
+            left: -11px;
+            padding: 16px;
+            /*position: absolute;*/
+            width: 104%;
+            border-bottom: 4px solid #F87831;
+        }
+
+        .logout-msg-box {
+            background-color: #e2e2e2;
+            min-height: 290px;
+            position: relative;
+        }
+
+        .we-care-for-you {
+            background-color: #3b4c61;
+            min-height: 423px;
+            padding: 10px;
+        }
+
+        .we-care-for-you-txt h4 {
+            color: #fff;
+            font-family: opensans-bold_0;
+        }
+
+        .we-care-for-you img {
+            width: 330px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="col-md-12 text-center">
+                <div class="logo">
+                    
+                    <img src="https://www.fundzbazar.com/images/logo.png" alt="logo" />
+                </div>
+            </div>
+        </div>
+        <div class="pge404">
+            <div class="container">
+
+                <div class="col-md-4">
+                    <img style="width: 300px" src="/images/404_mas.png" alt="404_mas" />
+                </div>
+                <div class="col-md-8">
+                    <div class="text-center ">
+                        <div style="padding: 10px;">
+                            <div class="gbl-mrgn-btm">
+                                <p><span class="txt_404">404</span> <span class="pge-nt-found">Page not found !!</span></p>
+
+                            </div>
+                            <div class="text-left gbl-mrgn-btm">
+                                <div class="text-left gbl-mrgn-btm" style="margin-bottom: 20px;">
+                                    <h4 style="line-height: 1.4;">The FundzBazar page you are trying to reach is not available at this time. There are several possible reasons for this:</h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <span><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </span>The link you used is outdated
+                                    </li>
+                                    <li><span><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </span>The web address you entered is incorrect
+                                    </li>
+                                    <li style="margin-bottom: 15px"><span><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </span>The page you want no longer exists
+                                    </li>
+
+                                    <li>Go to  <a href="https://www.fundzbazar.com"><span style="background-color: hsl(213, 24%, 35%); border-radius: 5px; color: hsl(0, 0%, 100%); padding: 1px 8px;">FundzBazar</span> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</html>
+
+
