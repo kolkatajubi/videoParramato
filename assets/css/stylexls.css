@@ -64,13 +64,11 @@ body {
 }
 
 .response-button:focus,
-.send:focus,
 .response-button:active {
   outline: none;
 }
 
-.response-button:hover,
-.send {
+.response-button:hover {
   background-color: #4caf50;
   color: white;
   cursor: pointer;
