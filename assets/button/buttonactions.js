@@ -50,3 +50,12 @@ function FS() {
 //   // console.log("toggle fullscreen called...", fullscreen);
 //   if (fullscreen == 0) FS();
 // }
+function moveTouch(ev) {
+  FS();
+  // Process the event
+}
+
+function init() {
+  var el = document.getElementById("target1");
+  el.ontouchmove = moveTouch;
+}
