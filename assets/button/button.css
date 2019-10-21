@@ -10,7 +10,7 @@ button {
   color: #39393a;
   outline: none;
   background-color: rgb(255, 255, 255, 0.8);
-  /* cursor: pointer; */
+  cursor: pointer;
   font-size: 15px;
 }
 
@@ -22,22 +22,134 @@ video {
   z-index: -1;
 }
 
-.container {
-  bottom: 0px;
-  width: 100%;
-  position: absolute;
-  text-align: center;
-  background-image: linear-gradient(0deg, #222, transparent);
-  padding: 0 0 50px 0;
-}
 .display {
   width: 100%;
   height: 100%;
   display: inline-block;
   overflow: hidden;
 }
+/* 1b1f3b-715aff-fafaff-100007-30343f */
 body {
-  margin: 0;
-  padding: 0;
-  text-align: center;
+  align-items: center;
+  display: flex;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  height: 100vh;
+  justify-content: center;
+  /* margin: 0; */
+}
+.container {
+  align-items: center;
+  background: #000;
+  border-radius: 40px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  position: absolute;
+  width: 200px;
+  bottom: 100px;
+}
+.text {
+  color: white;
+  position: absolute;
+  transition: opacity 30ms;
+  user-select: none;
+  -moz-user-select: none;
+}
+
+.ok {
+  opacity: 0;
+}
+
+.active.container {
+  animation: 1.5s Container;
+}
+.active .text {
+  opacity: 0;
+  animation: 1.5s Text forwards;
+}
+
+.active .ok {
+  opacity: 1;
+  animation: 1.5s Ok forwards;
+}
+
+@keyframes Container {
+  0% {
+    width: 200px;
+  }
+  5% {
+    transform: scale(0.9);
+  }
+  10% {
+    width: 200px;
+    transform: scale(1);
+  }
+  40% {
+    width: 80px;
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1);
+    width: 80px;
+    bottom: 100px;
+  }
+  100% {
+    transform: scale(1);
+    width: 80px;
+    bottom: -80px;
+  }
+}
+
+@keyframes Text {
+  0% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  10% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes Ok {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.remove {
+  display: none;
 }
