@@ -22,14 +22,11 @@
 
   <body>
     <!-- <div class="display"> -->
-    <video id="myVideo">
+    <video id="myVideo" onclick="playPause();">
       <source src="start.mp4" type="video/mp4" />
     </video>
 
-    <div
-      class="container"
-      onclick="this.classList.toggle('active');run(this);playPause();"
-    >
+    <div class="container" onclick="this.classList.toggle('active');run(this);">
       <span class="text">Click here</span>
       <svg
         class="ok"
