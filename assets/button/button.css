@@ -19,9 +19,9 @@ body {
   width: 100%;
   align-items: center;
   display: flex;
-  height: 30vh;
+  height: 40vh;
   justify-content: center;
-  bottom: -40px;
+  bottom: -100px;
   position: absolute;
   font-family: sans-serif;
   font-weight: 600;
