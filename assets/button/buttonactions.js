@@ -1,13 +1,13 @@
 var fullscreen = 0;
 
 $(document).ready(() => {
-  document.getElementById("stylesheet").href = theme[flow.theme];
-  document.addEventListener("fullscreenchange", exitHandler);
-  document.addEventListener("webkitfullscreenchange", exitHandler);
-  document.addEventListener("mozfullscreenchange", exitHandler);
-  document.addEventListener("MSFullscreenChange", exitHandler);
-
-  exitHandler(document);
+  console.log("ready");
+  let classes = document.getElementsByClassName("container");
+  for (let element of classes) {
+    console.log(element);
+    element.style.width =
+      element.firstElementChild.innerHTML.length * 12 + "px";
+  }
 });
 
 function playPause() {
@@ -22,6 +22,13 @@ function playPause() {
     blurBackground();
     // document.getElementById("playpause").innerHTML = "PLAY";
   }
+}
+function run(container) {
+  container.classList.toggle("active");
+  container.addEventListener("animationend", () => {
+    container.classList.remove("active");
+    container.classList.add("remove");
+  });
 }
 
 function removeBlurBackground() {
