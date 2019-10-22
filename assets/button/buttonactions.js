@@ -1,7 +1,7 @@
 var fullscreen = 0;
 
 $(document).ready(() => {
-  document.getElementById("stylesheet").href = theme[flow.theme];
+  // document.getElementById("stylesheet").href = theme[flow.theme];
   document.addEventListener("fullscreenchange", exitHandler);
   document.addEventListener("webkitfullscreenchange", exitHandler);
   document.addEventListener("mozfullscreenchange", exitHandler);
