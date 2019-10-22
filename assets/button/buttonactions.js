@@ -2,13 +2,42 @@ var fullscreen = 0;
 
 $(document).ready(() => {
   console.log("ready");
-  let classes = document.getElementsByClassName("container");
+  let classes = document.getElementsByClassName("button");
   for (let element of classes) {
     console.log(element);
     element.style.width =
       element.firstElementChild.innerHTML.length * 12 + "px";
   }
 });
+function run(button) {
+  button.classList.toggle("active");
+  button.addEventListener("animationend", () => {
+    button.classList.remove("active");
+    button.classList.add("remove");
+    getSiblings(button).forEach(el => {
+      el.classList.add("remove");
+    });
+  });
+  getSiblings(button).forEach(el => {
+    el.style.opacity = "0.2";
+  });
+}
+
+var getSiblings = function(elem) {
+  // Setup siblings array and get the first sibling
+  var siblings = [];
+  var sibling = elem.parentNode.firstChild;
+
+  // Loop through each sibling and push to the array
+  while (sibling) {
+    if (sibling.nodeType === 1 && sibling !== elem) {
+      siblings.push(sibling);
+    }
+    sibling = sibling.nextSibling;
+  }
+
+  return siblings;
+};
 
 function playPause() {
   // FS();
@@ -22,13 +51,6 @@ function playPause() {
     blurBackground();
     // document.getElementById("playpause").innerHTML = "PLAY";
   }
-}
-function run(container) {
-  container.classList.toggle("active");
-  container.addEventListener("animationend", () => {
-    container.classList.remove("active");
-    container.classList.add("remove");
-  });
 }
 
 function removeBlurBackground() {
