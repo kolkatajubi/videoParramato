@@ -12,7 +12,7 @@ $(document).ready(() => {
 
 function playPause() {
   // FS();
-  // console.log("play called fullscreen...");
+  console.log("play called fullscreen...");
   if (myVideo.paused) {
     removeBlurBackground();
     myVideo.play();
