@@ -1,7 +1,7 @@
 var fullscreen = 0;
 
 $(document).ready(() => {
-  // document.getElementById("stylesheet").href = theme[flow.theme];
+  document.getElementById("stylesheet").href = theme[flow.theme];
   document.addEventListener("fullscreenchange", exitHandler);
   document.addEventListener("webkitfullscreenchange", exitHandler);
   document.addEventListener("mozfullscreenchange", exitHandler);
@@ -12,7 +12,7 @@ $(document).ready(() => {
 
 function playPause() {
   // FS();
-  console.log("play called fullscreen...");
+  // console.log("play called fullscreen...");
   if (myVideo.paused) {
     removeBlurBackground();
     myVideo.play();
