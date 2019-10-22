@@ -13,6 +13,7 @@ body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
+  background-color: #000;
 }
 .box {
   width: 100%;
@@ -33,7 +34,7 @@ body {
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color: #000;
+  /* background-color: #000; */
 }
 .container {
   align-items: center;
