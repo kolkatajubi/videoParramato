@@ -476,7 +476,7 @@ function createButton(data, text) {
   // console.log("data", data);
   // console.log("text", text);
   return (
-    ` <div class="button" onclick="run(this);getNextStageData();">
+    ` <div class="button" onclick="run(this);">
     <span class="button-text">` +
     text +
     `</span>
