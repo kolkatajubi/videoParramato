@@ -471,7 +471,7 @@ function displayChat(view) {
     for (let element of classes) {
       console.log(element);
       element.style.width =
-        element.firstElementChild.innerHTML.length * 12 + "px";
+        element.firstElementChild.innerHTML.length * 18 + "px";
     }
   });
 }
