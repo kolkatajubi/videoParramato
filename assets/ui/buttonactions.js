@@ -41,27 +41,27 @@ var getSiblings = function(elem) {
   return siblings;
 };
 
-function playPause() {
-  // FS();
-  // console.log("play called fullscreen...");
-  if (myVideo.paused) {
-    removeBlurBackground();
-    myVideo.play();
-    // document.getElementById("playpause").innerHTML = "PAUSE";
-  } else {
-    myVideo.pause();
-    blurBackground();
-    // document.getElementById("playpause").innerHTML = "PLAY";
-  }
-}
+// function playPause() {
+//   // FS();
+//   // console.log("play called fullscreen...");
+//   if (myVideo.paused) {
+//     removeBlurBackground();
+//     myVideo.play();
+//     // document.getElementById("playpause").innerHTML = "PAUSE";
+//   } else {
+//     myVideo.pause();
+//     blurBackground();
+//     // document.getElementById("playpause").innerHTML = "PLAY";
+//   }
+// }
 
-function removeBlurBackground() {
-  document.getElementById("myVideo").style.filter = "blur(0px)";
-}
+// function removeBlurBackground() {
+//   document.getElementById("myVideo").style.filter = "blur(0px)";
+// }
 
-function blurBackground() {
-  document.getElementById("myVideo").style.filter = "blur(10px)";
-}
+// function blurBackground() {
+//   document.getElementById("myVideo").style.filter = "blur(10px)";
+// }
 
 function exitHandler(document) {
   console.log("exit handler...");
@@ -97,18 +97,4 @@ function FS() {
       .width("100%")
       .height("100%");
   }
-}
-
-// function toggleFS() {
-//   // console.log("toggle fullscreen called...", fullscreen);
-//   if (fullscreen == 0) FS();
-// }
-function moveTouch(ev) {
-  FS();
-  // Process the event
-}
-
-function init() {
-  var el = document.getElementById("target1");
-  el.ontouchmove = moveTouch;
 }

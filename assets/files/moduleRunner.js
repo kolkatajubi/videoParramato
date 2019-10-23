@@ -255,6 +255,7 @@ function documentReady() {
   src="https://pixie.jubi.ai/videoParramato/static/css/play.png"
   id="playImg"
   onclick="playPause();"
+  style='';
 />
 <div class="chat"></div>`);
 }
