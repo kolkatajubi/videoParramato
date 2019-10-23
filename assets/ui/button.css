@@ -57,7 +57,7 @@ body {
   margin: 10px;
   flex-shrink: 0;
   justify-content: center;
-  margin-top: 25vh;
+  margin-top: 10vh;
   scrollbar-width: none;
 }
 .button-text {
