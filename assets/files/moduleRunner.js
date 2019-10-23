@@ -17,11 +17,11 @@ var flow = {
           {
             data: "Health Insurance",
             text: "Okay Lets Continue"
-          },
-          {
-            data: "ULIP",
-            text: " Skip"
           }
+          // {
+          //   data: "ULIP",
+          //   text: " Skip"
+          // }
           // {
           //   data: "Travel Insurance",
           //   text: " Travel  Insurance ✈️"
