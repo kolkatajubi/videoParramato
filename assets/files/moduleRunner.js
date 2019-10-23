@@ -241,7 +241,40 @@ $(document).ready(() => {
       btn.parentElement.classList.add("remove");
     });
   });
+  $("body").on("click", ".button", event => {
+    button.classList.toggle("active");
+    button.addEventListener("animationend", () => {
+      button.classList.remove("active");
+      button.classList.add("remove");
+      getNextStageData();
+      console.log("nextStageCalled.....");
+    });
+    getSiblings(button).forEach(el => {
+      el.style.opacity = "0.2";
+      el.classList.toggle("inactive");
+      el.addEventListener("animationend", () => {
+        el.classList.remove("inactive");
+        el.classList.add("remove");
+      });
+    });
+  });
 });
+
+var getSiblings = function(elem) {
+  // Setup siblings array and get the first sibling
+  var siblings = [];
+  var sibling = elem.parentNode.firstChild;
+
+  // Loop through each sibling and push to the array
+  while (sibling) {
+    if (sibling.nodeType === 1 && sibling !== elem) {
+      siblings.push(sibling);
+    }
+    sibling = sibling.nextSibling;
+  }
+
+  return siblings;
+};
 
 function exitHandler(document) {
   if (
@@ -512,7 +545,7 @@ function createButton(data, text) {
   // console.log("data", data);
   // console.log("text", text);
   return (
-    ` <div class="button" onclick="run(this);">
+    ` <div class="button" >
     <span class="button-text">` +
     text +
     `</span>
@@ -594,8 +627,6 @@ function createText(pattern) {
   <button
     type="submit"
     class="text-send"
-    onclick="
-  run(this);"
   >
     Send
   </button>
