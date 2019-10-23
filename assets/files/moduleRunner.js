@@ -229,6 +229,17 @@ $(document).ready(() => {
       }
     if (videoTime == videoDuration) blurBackground();
   }, 100);
+
+  $("body").on("click", ".text-send", event => {
+    console.log(event);
+    let btn = event.currentTarget;
+    btn.parentElement.classList.toggle("active");
+    btn.parentElement.style.padding = "0px";
+    btn.parentElement.addEventListener("animationend", () => {
+      btn.parentElement.classList.remove("active");
+      btn.parentElement.classList.add("remove");
+    });
+  });
 });
 
 function exitHandler(document) {
@@ -473,6 +484,20 @@ function displayChat(view) {
       element.style.width =
         element.firstElementChild.innerHTML.length * 18 + "px";
     }
+    $(".text-send-idle").click(event => {
+      let el = event.currentTarget;
+      el.lastElementChild.style.display = "block";
+      el.firstElementChild.style.display = "none";
+      el.style.float = "right";
+      el.style["margin-right"] = "1%";
+      el.classList.add("text-send-transition");
+      el.addEventListener("animationend", () => {
+        el.classList.remove("text-send-transition");
+        el.classList.remove("text-send-idle");
+        el.classList.add("text-send");
+        el.style.width = "34px";
+      });
+    });
   });
 }
 
@@ -555,10 +580,37 @@ function createText(pattern) {
   } else {
     pattern = `/` + pattern + `/`;
   }
+  // return (
+  //   `<input id='name' class='response-text' type='text' onkeyup='validate(` +
+  //   pattern +
+  //   `);' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`
+  // );
   return (
-    `<input id='name' class='response-text' type='text' onkeyup='validate(` +
+    `<div class="text-field">
+  <input type="text" class="text-input" onkeyup='validate(` +
     pattern +
-    `);' placeholder='enter here ...' /> <button class='send' disabled onclick='getNextStageData();'>Send</button>`
+    `)' />
+  <button
+    type="submit"
+    class="text-send"
+    onclick="
+  run(this);"
+  >
+    Send
+  </button>
+  <svg
+    class="text-complete"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+  >
+    <path
+      d="M34.912 50.75l10.89 10.125L67 36.75"
+      fill="none"
+      stroke="#333"
+      stroke-width="6"
+    />
+  </svg>
+</div>`
   );
 }
 
