@@ -243,9 +243,10 @@ $(document).ready(() => {
   });
   $("body").on("click", ".button", event => {
     let button = event.currentTarget;
-    console.log(event);
+    //console.log(event);
     button.classList.toggle("active");
-    button.addEventListener("animationend", () => {
+    button.addEventListener("animationend", event => {
+      console.log(event);
       button.classList.remove("active");
       button.classList.add("remove");
       getNextStageData();
@@ -274,7 +275,7 @@ var getSiblings = function(elem) {
     }
     sibling = sibling.nextSibling;
   }
-  console.log(siblings.length, "length");
+  //console.log(siblings.length, "length");
   return siblings;
 };
 
@@ -516,7 +517,7 @@ function displayChat(view) {
   setTimeout(() => {
     let classes = document.getElementsByClassName("button");
     for (let element of classes) {
-      console.log(element.firstElementChild.innerHTML.length * 18);
+      // console.log(element.firstElementChild.innerHTML.length * 18);
       element.style.width =
         element.firstElementChild.innerHTML.length * 18 + "px";
     }
