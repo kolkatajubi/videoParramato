@@ -14,6 +14,7 @@ function run(button) {
   button.addEventListener("animationend", () => {
     button.classList.remove("active");
     button.classList.add("remove");
+    getNextStageData();
   });
   getSiblings(button).forEach(el => {
     el.style.opacity = "0.2";
@@ -21,7 +22,6 @@ function run(button) {
     el.addEventListener("animationend", () => {
       el.classList.remove("inactive");
       el.classList.add("remove");
-      getNextStageData();
     });
   });
 }

@@ -16,12 +16,12 @@ var flow = {
         data: [
           {
             data: "Health Insurance",
-            text: "OKAY Lets Continue"
+            text: "Okay Lets Continue"
+          },
+          {
+            data: "ULIP",
+            text: " Skip"
           }
-          // {
-          //   data: "ULIP",
-          //   text: " ULIP💸"
-          // },
           // {
           //   data: "Travel Insurance",
           //   text: " Travel  Insurance ✈️"
