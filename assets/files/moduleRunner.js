@@ -272,12 +272,12 @@ var getSiblings = function(elem) {
 
   // Loop through each sibling and push to the array
   while (sibling) {
-    if (sibling !== elem) {
+    if (sibling.nodeType === 1 && sibling !== elem) {
       siblings.push(sibling);
     }
     sibling = sibling.nextSibling;
   }
-  //console.log(siblings.length, "length");
+
   return siblings;
 };
 
