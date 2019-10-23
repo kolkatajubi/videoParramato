@@ -61,14 +61,7 @@ var flow = {
       firstMessage: "Awesome!",
       skipGhost: true
     },
-    {
-      text: [
-        "Oh even I am happy to see you happy and will do my best to make you even more happy by solving your queries"
-      ],
-      video: "https://pixie.jubi.ai/videoParramato/static/videos/name.mp4",
-      stage: "name",
-      type: "text"
-    },
+
     {
       text: [
         "Insurance is a contract, represented by a policy, in which an individual or entity receives financial protection or reimbursement against losses from an insurance company."
@@ -88,6 +81,14 @@ var flow = {
           }
         ]
       }
+    },
+    {
+      text: [
+        "Oh even I am happy to see you happy and will do my best to make you even more happy by solving your queries"
+      ],
+      video: "https://pixie.jubi.ai/videoParramato/static/videos/name.mp4",
+      stage: "name",
+      type: "text"
     },
     {
       text: [
