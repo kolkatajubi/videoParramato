@@ -464,6 +464,14 @@ function createUI(currentData) {
 function displayChat(view) {
   // console.log("displayChat...");
   $(".box").append(view);
+  setTimeout(() => {
+    let classes = document.getElementsByClassName("button");
+    for (let element of classes) {
+      console.log(element);
+      element.style.width =
+        element.firstElementChild.innerHTML.length * 12 + "px";
+    }
+  });
 }
 
 function clearChat() {
