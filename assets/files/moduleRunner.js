@@ -257,7 +257,7 @@ function documentReady() {
   onclick="playPause();"
   style='';
 />
-<div class="chat"></div>`);
+<div class="box"></div>`);
 }
 
 function removeBlurBackground() {
@@ -414,7 +414,7 @@ function createUI(currentData) {
     case "button":
     case "quickReply":
       // console.log("button / QuickReply");
-      display = `<div class="box">
+      display = `
       <div class="button-list">`;
       for (i in currentData.next.data) {
         if (!currentData.next.data[i].type) {
@@ -440,7 +440,7 @@ function createUI(currentData) {
             );
         }
       }
-      display = display + `</div></div>`;
+      display = display + `</div>`;
       // console.log(display);
       break;
     case "generic":
@@ -463,12 +463,12 @@ function createUI(currentData) {
 
 function displayChat(view) {
   // console.log("displayChat...");
-  $(".chat").append(view);
+  $(".box").append(view);
 }
 
 function clearChat() {
   // console.log("clearChat...");
-  $(".chat").empty();
+  $(".box").empty();
 }
 
 function createButton(data, text) {
