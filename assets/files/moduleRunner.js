@@ -243,6 +243,7 @@ $(document).ready(() => {
   });
   $("body").on("click", ".button", event => {
     let button = event.currentTarget;
+    console.log(event);
     button.classList.toggle("active");
     button.addEventListener("animationend", () => {
       button.classList.remove("active");
