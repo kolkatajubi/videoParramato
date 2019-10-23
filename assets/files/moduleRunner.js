@@ -469,7 +469,7 @@ function displayChat(view) {
   setTimeout(() => {
     let classes = document.getElementsByClassName("button");
     for (let element of classes) {
-      console.log(element);
+      console.log(element.firstElementChild.innerHTML.length * 18);
       element.style.width =
         element.firstElementChild.innerHTML.length * 18 + "px";
     }
