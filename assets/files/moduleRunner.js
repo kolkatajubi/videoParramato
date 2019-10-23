@@ -387,11 +387,13 @@ function videoDisplay(videoData) {
   );
   // console.log("<source id='start' type='video/mp4' src='" + videoData + "' />");
   // $("#myVideo").attr("poster", "");
-  var video = document.getElementById("myVideo");
-  console.log(video);
-  video.load();
-  if (currentStageNum == 0) $("#playImg").show();
-  else video.play();
+  setTimeout(() => {
+    var video = document.getElementById("myVideo");
+    // console.log(video);
+    video.load();
+    if (currentStageNum == 0) $("#playImg").show();
+    else video.play();
+  });
 }
 
 function createUI(currentData) {
