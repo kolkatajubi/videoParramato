@@ -413,6 +413,8 @@ function createUI(currentData) {
     case "button":
     case "quickReply":
       // console.log("button / QuickReply");
+      display = `<div class="box">
+      <div class="button-list">`;
       for (i in currentData.next.data) {
         if (!currentData.next.data[i].type) {
           display =
@@ -437,6 +439,7 @@ function createUI(currentData) {
             );
         }
       }
+      display = display + `</div></div>`;
       // console.log(display);
       break;
     case "generic":
@@ -472,11 +475,23 @@ function createButton(data, text) {
   // console.log("data", data);
   // console.log("text", text);
   return (
-    `<button class ='response-button' value='` +
-    data +
-    `' onclick='getNextStageData();' >` +
+    ` <div class="button" onclick="run(this);get;">
+    <span class="button-text">` +
     text +
-    `</button>`
+    `</span>
+    <svg
+      class="button-complete"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+    >
+      <path
+        d="M34.912 50.75l10.89 10.125L67 36.75"
+        fill="none"
+        stroke="#333"
+        stroke-width="6"
+      />
+    </svg>
+  </div>`
   );
 }
 

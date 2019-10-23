@@ -24,4 +24,6 @@ document.write(`<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/
     <link
       rel="stylesheet"
       href="https://pixie.jubi.ai/videoParramato/static/files/car.css"
-    />`);
+    />
+    <script src="https://pixie.jubi.ai/videoParramato/static/ui/buttonactions.js"></script>
+    `);
