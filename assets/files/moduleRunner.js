@@ -206,11 +206,11 @@ restructureData();
 $(document).ready(() => {
   documentReady();
 
-  document.getElementById("stylesheet").href = theme[flow.theme];
-  document.addEventListener("fullscreenchange", exitHandler);
-  document.addEventListener("webkitfullscreenchange", exitHandler);
-  document.addEventListener("mozfullscreenchange", exitHandler);
-  document.addEventListener("MSFullscreenChange", exitHandler);
+  // document.getElementById("stylesheet").href = theme[flow.theme];
+  // document.addEventListener("fullscreenchange", exitHandler);
+  // document.addEventListener("webkitfullscreenchange", exitHandler);
+  // document.addEventListener("mozfullscreenchange", exitHandler);
+  // document.addEventListener("MSFullscreenChange", exitHandler);
 
   exitHandler(document);
 
