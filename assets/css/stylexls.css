@@ -2,11 +2,11 @@ body {
   background: black;
 }
 
-.display {
+/* .display {
   position: relative;
   height: 270px;
   width: 480px;
-}
+} */
 
 .video {
   position: absolute;
@@ -15,10 +15,10 @@ body {
   z-index: 0;
 }
 
-.display:focus,
+/* .display:focus,
 .display:active {
   outline: none;
-}
+} */
 
 #myVideo {
   position: absolute;
