@@ -274,7 +274,7 @@ var getSiblings = function(elem) {
     }
     sibling = sibling.nextSibling;
   }
-  console.log(sibling.length, "length");
+  console.log(siblings.length, "length");
   return siblings;
 };
 
