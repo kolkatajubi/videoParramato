@@ -246,11 +246,13 @@ $(document).ready(() => {
     //console.log(event);
     button.classList.toggle("active");
     button.addEventListener("animationend", event => {
-      console.log(event);
-      button.classList.remove("active");
-      button.classList.add("remove");
-      getNextStageData();
-      console.log("nextStageCalled.....");
+      if (event.animationName == "Button") {
+        console.log(event);
+        button.classList.remove("active");
+        button.classList.add("remove");
+        getNextStageData();
+        console.log("nextStageCalled.....");
+      }
     });
     getSiblings(button).forEach(el => {
       el.style.opacity = "0.2";
